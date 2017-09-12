@@ -1,0 +1,219 @@
+html,body
+{
+	overflow-x:hidden; 
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer
+{
+	margin:0px;
+}
+.row
+{
+	padding:0px;
+	margin:0;
+}
+
+.mcontainer {
+    padding-top: 0px;
+}
+
+.image-container {
+   
+    position: relative;
+    margin-top: 0%;
+    margin-bottom: 40%;
+    height:0px;
+}
+.navbar
+{
+	background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   box-shadow: none;
+}
+
+.signup-content
+{
+	margin-left: 32%;
+	padding-top: 21%;
+}
+.signup-content p
+{
+    font-size:18px;
+}
+.video-overlay {
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	
+	padding: 19.5%;
+	font-size: 20px;
+	font-family: Helvetica;
+	color: #FFF;
+	background: rgba(101, 45, 145, 0.54);
+	width: 100%;
+	z-index: -1;
+        height: 172%;
+}
+.customer-reach {
+    line-height: 50px;
+    max-height: 25px;
+    font-size: 28px;
+    color: #652D90;
+    white-space: nowrap;
+    margin-bottom: 2px;
+    
+    padding-bottom: 5px;
+}
+.customer-reach-name {
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+    color: rgba(0, 0, 0, 1);
+}
+.highlights h3.brand , .highlights h3.influencer{
+    
+	color: #FFFFFF;
+	font-size: 32px;
+	text-align: center;
+	border-radius: 9px 9px 0px 0px;
+	padding: 7%;
+}
+.highlights {
+    background-color: rgba(0,0,0,0);
+    color: #444343;
+    padding-bottom: 1%;
+    width: 88%;
+    margin: 0 auto;
+    border: 2px solid #E0E0E0;
+    border-radius: 15px;
+    margin-bottom: 4%;
+}
+.influencer-button,.brands-button {
+    border-radius: 15px;
+    padding: 15px 60px;
+    
+    border: #652D90 !important;
+    
+    color:white;
+}
+
+.image-container button {
+    position: relative;
+    top: 1%;
+    left: 0%;
+}
+
+#video-background {
+    position: absolute;
+   
+    z-index: -829;
+    width: 100%;
+}
+.navbar-default .navbar-nav > li > a 
+    {
+        color:#FFF;
+    }
+
+ .signup-content h1
+ {
+   margin-left:-6%;
+
+ }   
+  .signup-content p
+  {
+     margin-left: 14%;
+  }
+#brand-signup
+{
+    margin-right:9%;
+    padding-right: 3%;
+    padding-left: 4%;
+}
+
+@media screen and (max-width: 480px) {
+   /* body {
+        background-color: lightgreen;
+    }
+*/
+    .navbar-default
+    {
+        background-color: #FFF !important;
+    }
+
+    .navbar-default .navbar-nav > li > a 
+    {
+        color:#000 !important;
+    }
+
+    .customer-reach, .customer-reach-name
+    {
+        font-size:15px;
+    }
+
+    .signup-content h1, .signup-content p
+    {
+        font-size:15px;
+    }
+    
+    .startchange img
+    {
+        width:40%;
+
+    }
+    .startchange
+    {
+        visibility: hidden;
+    }
+    .signup-content button
+    {
+        height: 46px;
+        width: 177px;
+    }
+    #brand-signup
+    {
+        margin-left: -17%;
+        margin-right: 15%;
+        margin-bottom: 7%;
+        margin-top: 4%;
+    }
+    #inf-signup
+    {
+        margin-bottom: 7%;
+        margin-top: 4%;
+        margin-left: -17%;
+    }
+    #video-background
+    {
+        width:142%;
+    }
+    .signup-content h1, .signup-content p
+    {
+        margin-left: -1%;
+    }
+
+    .modal
+    {
+        margin-left: -40%;
+    }
+    .modal-dialog
+    {
+        width:75%;
+    }
+
+    
+}
+
+@media screen and (max-width: 940px) and (min-width: 480px)  {
+    .startchange
+    {
+        visibility: hidden;
+    }
+}
+
+/*.color-change { color: #FFF !important } */

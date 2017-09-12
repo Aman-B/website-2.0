@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>FitBeau</title>
+    <link rel="icon" href="images/logo_alone.png">
+    <link href="layout/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Font awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.js"></script>
+
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #FFFFFF;">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">  
+            <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+              
+              <li id="change-two"><a style="font-weight: 600;font-size: 12px;color: #4B4B4B;" href="#">SEARCH</a></li>
+              <li id="change-two"><a style="font-weight: 600;font-size: 12px;color: #4B4B4B;" href="#">FAVORITE</a></li>
+              <li id="change-two">
+                <button type="button" class="btn navbar-btn purple-button" id="nav-signup-btn" style="font-size :11px;">
+                  CREATE NEW <i class="fa fa-plus" aria-hidden="true" style="font-size: 7px;padding-left: 10px;"></i>
+                </button>
+              </li>
+              <li><a style="font-weight: 600;font-size: 12px;color: #4B4B4B;"	 href="#">John Doe</a></li>
+              
+              <li id="change-two">
+                <button type="button" class="btn navbar-btn person-button">
+                  <i class="fa fa-user" style="font-size :16px;" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li><a href="#"><i class="fa fa-angle-down" style="font-size: 20px;" aria-hidden="true"></i></a></li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+
+    <div id="signup-container"></div><!-- [Modal for Business Modal] -->
+    <div id="business-modal-container"></div><!-- [Modal for Business Modal end.] -->
+    <!-- [Modal for Influencer Modal] -->
+    <div id="influencer-modal-container"></div><!-- [Modal for Influencer Modal end.] -->
+    <!-- [Modal for email sent Modal] -->
+    <div id="email-sent-modal-container"></div><!-- [Modal for email sent Modal end.] -->
+    <!-- [Modal for wait Modal] -->
+    <div id="wait-modal-container"></div><!-- [Modal for wait Modal end.] -->
+    <!-- [Modal for create content Modal] -->
+    <div id="create-content-modal-container"></div><!-- [Modal for create content Modal end] -->
+
+    <div class="container-fluid-container mcontainer" style="margin-top: 7%;width: 100%;margin-left: 10%;">
+      <div class="form-bg" style="margin: 0% 0 5% 0;">
+        <h3> Create Account </h3>
+        <form method="post" action="#" style="margin-top: 5%;">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <!-- <div class="col-md-1 col-sm-1"> </div> --><!-- left waste div -->
+            <!-- center part start -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                                
+              <div class="col-md-12 col-sm-12 col-xs-12"><!-- top part start -->
+                <!-- right start -->
+                <div class="col-md-6 col-sm-6 col-xs-12"> 
+                  <div class="form_profile_image" >
+                    <img src="images/create_content/profile_background.png" class="img-responsive" />
+                    <div class="form-center-image" >
+                      <a href="#"> <img src="images/create_account/form-small-img.png" class="img-responsive" /> </a>
+                    </div>                                                       
+                  </div>                                                       
+                </div>
+                <!-- right end --> 
+                <div class="col-xs-12" style="width:5%;height: 15px;"> </div>
+
+                <!-- left start -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="">   
+                    <div class="form-group margin-bottom">
+                      <input type="text" class="form-control" placeholder="Name Surname * :">
+                    </div>
+
+                    <div class="form-group margin-bottom">
+                      <select name="" class="form-control">
+                        <option>Category : </option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group margin-bottom">
+                      <select name="" class="form-control">
+                        <option>Type : </option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group margin-bottom">
+                      <input type="text" class="form-control" placeholder="Website * :">
+                    </div>
+
+                    <div class="form-group margin-bottom">
+                      <input type="text" class="form-control" placeholder="Make * :">
+                    </div>
+
+                  </div>
+                </div>
+                <!-- left end --> 
+              </div><!-- top part end -->
+              
+              <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 1%;">
+                <div class="col-md-11 col-sm-11 col-xs-12" style="width: 89%;">
+                  <div class="form-group margin-bottom">
+                    <textarea class="form-control" rows="5" cols="50" placeholder="Description :" id="comment"></textarea>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0% 0% 3% 0%; text-align:center;">
+                <button type="submit" class="btn create-account-button">Submit</button>
+              </div>
+          
+            </div>
+            <!-- center part end -->
+            <!-- <div class="col-md-1"> </div>--><!-- right waste div -->
+          </div>
+        </form>       
+      </div>
+    </div>
+      
+    <footer>
+      <div class="footer" id="footer" style="background-color:#45415d;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 col-md-2 col-sm-4 col-xs-6" style="padding-top:40px;">
+              <a class="navbar-brand" href="#"><img alt="" src="images/logo_light.png"></a>
+              <ul class="social">
+                <li>
+                  <a href="https://www.facebook.com/TheFitBeauApp" target="_blank"><i class=" fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/FitBeau" target="_blank"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/the_fitbeau_app/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg" target="_blank"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company-beta/24794689/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.pinterest.com/the_fitbeau_app/" target="_blank"><i class="fa fa-pinterest"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <h3>FitBeau App</h3>
+              <ul>
+                <!-- <li> <a href="#"> Features </a> </li>
+                <li> <a href="#"> Pricing </a> </li> -->
+                <li>
+                  <a href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8" target="_blank">App Store</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <h3>Who We Are</h3>
+              <ul>
+                <li>
+                  <a href="about_us.html">Who We Are</a>
+                </li>
+                <!-- <li> <a href="#"> Case Study </a> </li>
+                <li> <a href="#"> Pricing Shop </a> </li> -->
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <h3>How it works</h3>
+              <ul>
+                <li>
+                  <a href="howto.html">For Brands</a>
+                </li>
+                <li>
+                  <a href="inf_howto.html">For Influencers</a>
+                </li>
+                <!-- <li> <a href="#"> Case Study </a> </li>
+                <li> <a href="#"> Pricing Shop </a> </li> -->
+              </ul>
+            </div>
+            <!-- <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+              <h3> Support </h3>
+              <ul>
+                <li> <a href="#"> Who We Are </a> </li>
+                <li> <a href="#"> FAQ </a> </li>
+                <li> <a href="#"> Contact Us </a> </li>
+              </ul>
+            </div> -->
+            <!--<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+              <h3> NEWSLETTER </h3>
+              <p>Want weekly tips? SignUp for our newsletter now.</p>
+              <ul>
+                <li>
+                  <div class="input-group"style="border:0;">
+                    <input id="signup-email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="signup-btn" style="background:#2d2343; color:#FFFFFF; border: 2px solid #2d2343;">SignUp</span>
+                  </div>
+                </li>
+              </ul>
+            </div> -->
+          </div><!--/.row-->
+        </div><!--/.container-->
+      </div><!--/.footer-->
+      <!-- <div class="footer-bottom">
+        <div class="container">
+          <p class="text-center"> Copyright © Footer 2014. All right reserved. </p>
+          <div class="pull-right">
+            <ul class="nav nav-pills payments">
+              <li><i class="fa fa-cc-visa"></i></li>
+              <li><i class="fa fa-cc-mastercard"></i></li>
+              <li><i class="fa fa-cc-amex"></i></li>
+              <li><i class="fa fa-cc-paypal"></i></li>
+            </ul> 
+          </div>
+        </div>
+      </div> -->
+      <!--/.footer-bottom-->
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script> 
+    <script src="js/bundle.js" type="text/javascript"></script> <!-- <script type="text/javascript" src="js/index.js"></script> -->
+  </body>
+</html>

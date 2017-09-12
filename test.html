@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitBeau</title>
+    <link rel="icon" href="https://www.fitbeau.com/images/logo_alone.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-98319879-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+
+
+    <!-- Font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="icon" href="images/logo_alone.png">
+
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/b_index.css">
+    <link rel="stylesheet" href="css/global.css">
+
+    <!-- For the graph. -->
+<!-- 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.1/vis.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.1/vis.min.css"> -->
+
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+                        <!--  <li><a href="#" class="font-class">WHAT WE DO</a></li>
+			        <li><a href="#">WHO WE ARE</a></li>
+			        <li><a href="#">PRICING</a></li> -->
+                        <li class="dropdown"><a href="#" class="dropdown-toggle color-change" style="box-shadow:none;" data-toggle="dropdown"> HOW IT WORKS     <span class="caret"></span>
+</a>
+                            <ul class="dropdown-menu" style="left:10px; min-width:144px;">
+                                <li><a href="howto.html">For Brands</a>
+                                </li>
+                                <li><a href="inf_howto.html">For Influencers </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="change-two"><a href="index.html" class="color-change">BRAND</a>
+                        </li>
+                        <li id="change-two"><a href="b_index.html" class="color-change">INFLUENCER</a>
+                        </li>
+                        <li><a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8" class="color-change">GET APP</a>
+                        </li>
+                        <li><a href="about_us.html" class="color-change">ABOUT US</a>
+                        </li>
+                        <li><a href="https://blogfitbeau.wordpress.com" target="_blank">BLOG</a>
+                        </li>
+                        <!-- 			        <li><a href="#">FAQ</a></li>-->
+
+                        <!-- <li id="change-one"><button type="button" class="btn navbar-btn font-class-bold" id="nav-signin-btn">SIGN IN</button></li> -->
+                        <li id="change-two">
+                            <button type="button" class="btn navbar-btn blue-btn font-class-bold" id="nav-signup-btn" style="font-size :12px;">SIGN UP</button>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- /.navbar-collapse -->
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </nav>
+
+    </header>
+
+
+
+
+    <!-- /.carousel -->
+    <!-- Marketing messaging and featurettes==================================================- -->
+    <!--  Wrap the rest of the page in another container to center all the content. -->
+
+
+
+
+
+    <!-- end of carousel -->
+
+
+
+
+
+    <!-- [Modal for SignIn Modal] -->
+    <div class="modal fade modal-position" id="signin-modal" style="margin-top:10%;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border:none; padding-bottom:0px;">
+                    <h5 class="modal-title font-class-bold" style="font-size:22px; margin-left:38%;">Sign In</h5>
+
+                </div>
+                <div class="modal-body" style="padding:2%;">
+
+
+                    <form id="signin-form" style="width: 90%;margin-left: 5%;">
+                        <!-- business-signup-form" -->
+                        <div style="padding-top:6%;">
+                            <input class="input-style" type="email" id="signin-email" placeholder="Enter Registered Email" required/>
+                            <input class="input-style" type="password" id="signin-password" placeholder="Password" required/>
+                        </div>
+
+
+                </div>
+                <div class="modal-footer" style="border:none;">
+                    <button type="submit" class="btn button blue-btn" id="signin-btn" style="height:40px;width: 225px;margin-right: 20%;">SIGN IN</button>
+
+                    <button id="insta"> Login with Instagram</button>
+
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- [Modal for SignIn Modal end.] -->
+    <div id="signup-container"></div>
+
+
+
+
+
+    <!-- [Modal for Business Modal] -->
+    <div id="business-modal-container"></div>
+    <!-- [Modal for Business Modal end.] -->
+    <!-- [Modal for Influencer Modal] -->
+    <div id="influencer-modal-container"></div>
+
+
+    <!-- [Modal for Influencer Modal end.] -->
+
+    <!-- [Modal for email sent Modal] -->
+
+    <div id="email-sent-modal-container">
+
+    </div>
+
+    <!-- [Modal for email sent Modal end.] -->
+
+    <!-- [Modal for wait Modal] -->
+    <div id="wait-modal-container">
+
+    </div>
+
+    <!-- [Modal for wait Modal end.] -->
+
+    <!-- [Modal for create content Modal] -->
+
+    <div id="create-content-modal-container">
+
+    </div>
+
+    <!-- [Modal for create content Modal end] -->
+
+    <div class="row image-container">
+        <div class="col-lg-12" style="padding:0;">
+            <div class="video-overlay">
+
+            </div>
+
+            <video id="video-background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+                <source src="video/627961583.mp4" type="video/mp4"> Video not supported
+            </video>
+            <div class="signup-content">
+                <h1 class="font-class" style="color:#FFF;margin-bottom:2%; ">CONNECTING BRANDS WITH INFLUENCERS</h1>
+                <p class="font-class" style="  color: rgba(253, 255, 254, 0.76);"> EXCLUSIVE FITNESS AND BEAUTY</p>
+                <div style="margin-left:10%;">
+                    <button class="btn button blue-btn" id="brand-signup" >BRAND SIGNUP</button>
+                    <button class="btn button  button-default" id="inf-signup" style="color:#000;"> INFLUENCER SIGNUP</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- </div> -->
+
+
+    <!-- 		<div class="container-fluid startchange" style="">
+ -->
+    <div class="row startchange" style="margin-bottom: 4%;margin-left: 5%;">
+        <!-- <div class="row"> -->
+        <div class="col-lg-7 col-sm-6 col-xs-6 text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="customer-reach" style="color:#FFF;">+1,000,000</span>
+
+                </div>
+                <div class="col-md-12">
+                    <img src="images/line.png" alt="" />
+
+                </div>
+                <div class="col-md-12">
+
+                    <span class="customer-reach-name font-class" style="left: -1%;color:#FFF;">CUSTOMER REACH</span>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-lg-5 col-sm-6 col-xs-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="customer-reach" style="color:#FFF;">+100,000</span>
+
+                </div>
+                <div class="col-md-12">
+                    <img src="images/line.png" alt="" />
+
+                </div>
+                <div class="col-md-12">
+
+                    <span class="customer-reach-name font-class" style="left:-10%; color:#FFF;">POTENTIAL CUSTOMERS</span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- 			        </div>
+ -->
+    </div>
+
+
+    <div class="row" style="padding-top: 50px; padding-bottom:50px; margin-right:0px;color: #FFFFFF;background-color:#662D91;">
+
+        <div class="col-lg-12 text-center">
+
+            <h3 style=""> OUR SIMPLE PROCESS</h3>
+
+        </div>
+        <div class="col-lg-12 text-center">
+            <h5 style="">FINDING THE RIGHT FITNESS OR BEAUTY INFLUENCER HAS NEVER BEEN EASIER</h5>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 animatedParent" style="margin-top: 8%;">
+                <img src="images/process.png" class="img-responsive animated fadeInLeft go" alt="">
+            </div>
+            <div class="col-lg-6 animatedParent" data-sequence="300" style="margin-top:6%;">
+                <div class="row slide-in-content animated fadeInRight  go" data-id="1">
+                    <div class="col-md-12">
+                        <h3 class="font-class">SEARCH &amp; DISCOVER</h3>
+                        <p style="margin: 0 0 0px;margin-top: 3%;" class="font-class">Use our search page to filter influencers by ages range, followers or influencer type and browse though an array of influencer profile.</p>
+                        <p style="margin: 0 0 0px;" class="font-class">Use the quick view popup to take a peak at their profile, their best work and their social media analytics.</p>
+                        <p style="margin: 0 0 0px;" class="font-class">Click on their profile to take a deep dive into their performance.</p>
+                    </div>
+                </div>
+
+                <div class="row slide-in-content animated fadeInRight go" data-id="2" id="scroll-to">
+                    <div class="col-md-12">
+                        <h3 id="scroll-to" class="font-class" style="margin-top: 3%;">CONNECT &amp; COLLABORATE</h3>
+                        <p style="margin: 0 0 0px;margin-top: 3%;" class="font-class">Use the site or our integrated iPhone app to chat with influencers you like to get more of a feel for you who they are, and if they're a good match for your brand and product. Their portfolio highlights their best work and their profile quickly links you to their social media profiles and website.</p>
+                    </div>
+                </div>
+
+                <div class="row slide-in-content animated fadeInRight go" data-id="3">
+                    <div class="col-md-12">
+                        <h3 class="font-class" style="margin-top: 3%;">CAMPAIGN &amp; ANALYSE</h3>
+                        <p style="margin: 0 0 0px;margin-top: 3%;" class="font-class">When you're ready to increase exposure to a new product line or increase traffic to you're website, follow simple steps to launch a campaign. You set the criteria and the terms.</p>
+                        <p style="margin: 0 0 0px;" class="font-class">Only influencers who match your criteria will be able to apply, ensuring you get proposals from the best.</p>
+                        <p style="margin: 0 0 0px;" class="font-class">You can even invite influencers you've likes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h2 class="font-class"> FEATURED INFLUENCERS </h2>
+		</div>
+		<div class="col-lg-12 text-center">
+			<h4 class="font-class"> MEET SOME FITNESS AND BEAUTY INFLUENCERS</h4>
+		</div>
+
+		<div class="col-lg-12" style="margin-top:3%;">
+			<div class="row">
+
+				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 text-center">
+					<img class="img-circle"src="images/feat_girl.jpg" alt="" style="width:263px;height:262px;">
+					<h4 class="font-class">Angela Crickmore<a href="https://www.instagram.com/angelcrickmore/?hl=en">(@angelaCrickmore)</a></h4>
+                    <h4 class="font-class"><strong> 143k Followers</strong></h4>
+					
+				</div>
+				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 text-center">
+					<img src="images/feat_inf_man.png" alt="">
+					<h3 class="font-class">You can be here, too!</h3>
+
+					
+				</div>
+				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 text-center">
+					<img src="images/feat_inf_woman.png" alt="">
+					<h3 class="font-class">You can be here, too!</h3>
+
+				</div>
+				
+
+			</div>	
+		
+
+		</div>
+
+	</div>
+
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="text-align-center" style="line-height: 100px;"><span style="color: rgba(0,0,0,1);" class="font-class">WHAT'S IN IT FOR YOU</span></h2>
+        </div>
+        <div class="col-md-12 font-class">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="highlights">
+                        <h3 class="brand" style="margin: 0px 0px 2% 0px;background-color: #03CACF;"> BRANDS</h3>
+                        <div><img src="images/check.png" alt=""><span style="font-weight:bold;">  GET UP TO 2X MORE SALES & 37% MORE ATTENTION THAN PAID ADVERTISING </span>
+                        </div>
+                        <div> <img src="images/check.png" alt=""> <span>FREE PROFILE AND RISK FREE CAMPAIGNS </span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>ONLY PAY WHEN YOU FIND THE RIGHT MATCH </span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>ONLY VIEW PROPOSALS FROM THOSE WHO MEET YOUR CRITERIA</span> </div>
+                        <div><img src="images/check.png" alt=""> <span>FREE SUBSCRIPTION TO FINTENESS AND BEAUTY MARKETING BLOGS</span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>QUICKLY BROWSE ONLY FITNESS AND BEAUTY INFLUENCERS</span>
+                        </div>
+
+
+                        <p class="text-align-center" style="text-align: center;">
+                            <a class="btn  brands-button" id="two-brand-signup-link" style="background-color: #03CACF; margin-top:10%;margin-right:9%;">SIGNUP</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="highlights">
+                        <h3 class="influencer" style="margin: 0px 0px 2% 0px;background-color: #652D90;"> INFLUENCERS </h3>
+                        <div><img src="images/check.png" alt=""><span style="font-weight:bold;">  DOUBLE YOUR INCOME & RECEIVE MORE OFFERS TO PROMOTE </span>
+                        </div>
+                        <div> <img src="images/check.png" alt=""> <span>FREE MEDIA KIT(INC. CONTENT & BLOG PORTFOLIOS) </span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>SECURE AND FAST PAYMENT</span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>MASSIVE EXPOSURE TO FITNESS AND BEAUTY BRANDS</span> </div>
+                        <div><img src="images/check.png" alt=""> <span>SAVE BRANDS TO QUICKLY NEW CAMPAIGNS OR GET HEADHUNTED</span> </div>
+                        <div> <img src="images/check.png" alt=""> <span>FITBEAU BLOG/NEWSLETTER ON TIPS AND ADVISE</span>
+                        </div>
+                        <p class="text-align-center" style="text-align: center;">
+                            <a class="btn  influencer-button" id="two-influencer-signup-link" style="text-align: center;background-color: #652D90 !important; margin-top:10%;">SIGNUP</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+
+
+    <!-- <footer class="row"> -->
+    <div class="footer " id="footer" style="background-color:#45415d;">
+
+        <div class="row">
+
+            <div class="col-lg-5 col-md-2 col-sm-4 col-xs-6" style="padding-top:40px;">
+                <a class="navbar-brand" href="#"><img src="images/logo_light.png" alt="">
+                </a>
+
+                <ul class="social">
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/TheFitBeauApp"> <i class=" fa fa-facebook">   </i> </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://twitter.com/FitBeau"> <i class="fa fa-twitter">   </i> </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/the_fitbeau_app/"> <i class="fa fa-instagram">   </i> </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg"> <i class="fa fa-youtube">   </i> </a>
+                    </li>
+
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/company-beta/24794689/"> <i class="fa fa-linkedin">   </i> </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.pinterest.com/the_fitbeau_app/"> <i class="fa fa-pinterest">   </i> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <h3> FitBeau App </h3>
+                <ul>
+                    <!-- <li> <a href="#"> Features </a> </li>
+				                        <li> <a href="#"> Pricing </a> </li> -->
+                    <li> <a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8"> App Store </a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <h3> Who We Are </h3>
+                <ul>
+                    <li> <a href="about_us.html"> Who We Are </a> </li>
+                    <li><a href="https://blogfitbeau.wordpress.com" target="_blank">Blog</a>
+                    </li>
+
+                    <!-- <li> <a href="#"> Case Study </a> </li>
+				                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <h3> How it works </h3>
+                <ul>
+                    <li> <a href="howto.html"> For Brands </a> </li>
+                    <li> <a href="inf_howto.html"> For Influencers </a> </li>
+                    <!-- <li> <a href="#"> Case Study </a> </li>
+				                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-->
+
+
+    <!-- 				</footer>
+ -->
+ <!-- For the graph. -->
+ <!-- <div id="visualization"></div> -->
+
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+    </script>
+
+
+
+    <script type="text/javascript" src="js/test_bundle.js"></script>
+    <script type="text/javascript" src="js/new_index.js"></script>
+    <script type="text/javascript" src='js/css3-animate-it.js'></script>
+   <!-- For the graph. -->
+   <!-- <script type="text/javascript">
+    var container = document.getElementById('visualization');
+       var items = [
+        {x: '2014-06-11', y: 10},
+        {x: '2014-07-12', y: 25},
+        {x: '2014-08-13', y: 30},
+        {x: '2014-09-14', y: 10},
+        {x: '2014-06-15', y: 15},
+        {x: '2014-05-16', y: 30}
+      ];
+
+      var dataset = new vis.DataSet(items);
+      var options = {
+        width:'80%',
+        height:800,
+        timeAxis : {scale: 'month'},
+        zoomMin:5
+      };
+
+    var graph2d = new vis.Graph2d(container, dataset, options);
+</script> -->
+
+</body>
+
+</html>

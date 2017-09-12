@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>FitBeau</title>
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+
+	<!-- Font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="icon" href="images/logo_alone.png">
+
+	<link rel="stylesheet" href="css/about.css">
+	<link rel="stylesheet" href="css/howto.css">
+	<link rel="stylesheet" href="css/animations.css">
+		<link rel="stylesheet" href="css/global.css">
+
+
+
+	
+	</head>
+<body style="overflow-x:hidden;">
+	<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">  
+			      <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+			        <!-- <li><a href="#" class="font-class">WHAT WE DO</a></li>
+			        <li><a href="#">WHO WE ARE</a></li>
+			        <li><a href="#">PRICING</a></li> -->
+			        
+			        <li class="dropdown"><a href="#" class="dropdown-toggle"style="box-shadow:none;" data-toggle="dropdown"> HOW IT WORKS     <span class="caret"></span></button>
+</a>					<ul class="dropdown-menu" style="left:10px; min-width:144px;">
+			        	<li><a href="#">For Brands</a></li>
+			        	<li><a href="inf_howto.html">For Influencers </a></li>
+			        </ul></li>
+			        
+			        
+			        <li id="change-two"><a href="index.html" >BRAND</a></li>
+               		<li id="change-two"><a href="b_index.html">INFLUENCER</a></li>
+			        <li><a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8">GET APP</a></li>
+			        <li><a href="about_us.html">ABOUT US</a></li>
+			        <li><a href="https://blogfitbeau.wordpress.com" target="_blank">BLOG</a></li>
+<!-- 			        <li><a href="#">FAQ</a></li>
+ --><!-- 			         <li><button type="button" class="btn navbar-btn font-class-bold" id="nav-signin">SIGN IN</button></li>
+ -->			        <li><button type="button" class="btn navbar-btn blue-btn font-class-bold" id="nav-signup-btn" style="font-size :12px;">SIGN UP</button></li>
+			      </ul>
+
+			      
+			    </div><!-- /.navbar-collapse -->
+
+
+			  </div><!-- /.container-fluid -->
+
+			</nav>
+
+	</header>
+	
+<div id="signup-container"></div>
+
+		
+
+	
+		
+		<!-- [Modal for Business Modal] -->
+				<div id="business-modal-container"></div>
+		<!-- [Modal for Business Modal end.] -->
+		<!-- [Modal for Influencer Modal] -->
+				<div id="influencer-modal-container"></div>
+
+				
+		<!-- [Modal for Influencer Modal end.] -->
+
+		<!-- [Modal for email sent Modal] -->
+				
+				<div id="email-sent-modal-container">
+					
+				</div>
+
+		<!-- [Modal for email sent Modal end.] -->
+
+		<!-- [Modal for wait Modal] -->
+				<div id="wait-modal-container">
+					
+				</div>
+
+		<!-- [Modal for wait Modal end.] -->
+
+		<!-- [Modal for create content Modal] -->
+
+				<div id="create-content-modal-container">
+					
+				</div>
+
+
+
+	<div class="container-fluid mcontainer" style="padding: 0px;padding-top:2%; ">
+		<div class="row" >
+			<!-- <div class="col-lg-1" style="margin-top:15%;">
+				<input type="image" src="images/leftarrow.png" alt="A left arrow"  id="prev-btn" />
+				
+			</div> -->
+			<div id="slideshow"  >
+
+			   <div id="test" class="row ">
+			     
+			   </div>
+			   <div id="test2" class="row slide-in-content animated fadeInLeft go">
+			     
+			   </div>
+			
+				<div id="test3" class="row slide-in-content animated fadeInLeft go">
+			     
+			   </div>
+				
+				
+
+			   
+			   
+			   
+			</div>
+			<!-- <div class="col-lg-1" style="margin-top:15%;">
+				<input type="image" src="images/rightarrow.png" alt="A right arrow"  id="next-btn" />
+			</div> -->
+
+		</div>
+
+
+
+		<div style="position:absolute; bottom:7%; width:100%;">
+		<input type="image" src="images/leftarrow.png" alt="A left arrow"  style="position: absolute;left: 5%;background: white;border-radius: 50%;padding: 0.8%;box-shadow: 1px 1px 3px #817a7a;" id="prev-btn" />
+		<input type="image" src="images/rightarrow.png" alt="A right arrow" style="position: relative;left:90%;background: white;border-radius: 50%;padding: 0.8%;box-shadow: 1px 1px 3px #817a7a;" id="next-btn" />
+		</div>
+
+
+		
+	</div>
+	<footer>
+    <div class="footer" id="footer" style="background-color:#45415d;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5  col-md-4 col-sm-12 col-xs-12" style="padding-top:40px;">
+                        <a class="navbar-brand" href="#"><img src="images/logo_light.png" alt=""></a> 
+	                   
+	                    <ul class="social">
+	                         <li> <a  target="_blank" href="https://www.facebook.com/TheFitBeauApp"> <i class=" fa fa-facebook">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://twitter.com/FitBeau"> <i class="fa fa-twitter">   </i> </a> </li>
+   	                        <li> <a target="_blank" href="https://www.instagram.com/the_fitbeau_app/"> <i class="fa fa-instagram">   </i> </a> </li>
+							<li> <a target="_blank" href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg"> <i class="fa fa-youtube">   </i> </a> </li>
+
+	                        <li> <a target="_blank" href="https://www.linkedin.com/company-beta/24794689/"> <i class="fa fa-linkedin">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://www.pinterest.com/the_fitbeau_app/"> <i class="fa fa-pinterest">   </i> </a> </li>
+	                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> FitBeau App </h3>
+                    <ul>
+                        <!-- <li> <a href="#"> Features </a> </li>
+                        <li> <a href="#"> Pricing </a> </li> -->
+                        <li> <a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8"> App Store </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> Who We Are </h3>
+                    <ul>
+                        <li> <a href="about_us.html"> Who We Are </a> </li>
+			        	<li><a href="https://blogfitbeau.wordpress.com" target="_blank">Blog</a></li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> How it works </h3>
+                    <ul>
+                        <li> <a href="howto.html"> For Brands </a> </li>
+                        <li> <a href="inf_howto.html"> For Influencers </a> </li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+              <!--   <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Support </h3>
+                    <ul>
+                        <li> <a href="#"> Who We Are </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+ 
+                    </ul>
+                </div> -->
+             <!--    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> NEWSLETTER </h3>
+                    <p>Want weekly tips? SignUp for our newsletter now.</p>
+                    <ul>
+
+                        <li>
+                            <div class="input-group"style="border:0;">
+							  <input id="signup-email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
+							  <span class="input-group-addon" id="signup-btn" style="background:#2d2343; color:#FFFFFF; border: 2px solid #2d2343;">SignUp</span>
+							</div>
+
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <!-- <div class="footer-bottom">
+        <div class="container">
+            <p class="text-center"> Copyright © Footer 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div> -->
+    <!--/.footer-bottom--> 
+</footer>
+	
+
+
+	
+
+	<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+	
+
+
+	<script type="text/javascript" src="js/howto.js"></script>
+	<script type="text/javascript" src="js/bundle.js"></script>
+	<script  type="text/javascript" src='js/css3-animate-it.js'></script>
+
+		<!-- <script type="text/javascript" src="js/index.js"></script> -->
+
+	
+	
+</body>
+</html>

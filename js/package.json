@@ -1,0 +1,21 @@
+{
+  "name": "fitbeau",
+  "version": "1.0.0",
+  "description": "web",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "fitbeau"
+  ],
+  "author": "aman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "firebase": "^4.1.5",
+    "firebase-admin": "^5.2.1",
+    "twitter": "^1.7.1",
+    "twitter-node-client": "0.0.6"
+  }
+}

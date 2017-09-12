@@ -1,0 +1,27 @@
+<!-- [Modal for SignUp] -->
+				<div class="modal fade modal-position" id="signup-modal">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content" style="width:100%;">
+					      <div class="modal-header" style="border:none; padding-bottom:0px;">
+					        <h5 class="modal-title font-class-bold" style="font-size:15px;">Which one are you?</h5>
+					        
+					      </div>
+					      <div class="modal-body">
+					        
+					        <p class="font-class" style="color: #a19e9e;">If you’re a brand, business or agency click ‘Business’ otherwise select ‘Influencer’!</p>
+							<div class="signup-img-container">
+								<input type="image" id="business-btn" src="../images/business.png" alt="Business SignUp" style="padding-right:25px"/>
+							
+								<input type="image" id="influencer-btn" src="../images/influencer.png" alt="Influencer SignUp" style="padding-right:25px"/>
+							</div>
+
+
+					      </div>
+					      <div class="modal-footer" style="border:none;">
+					       <!--  <button class= "btn button blue-btn" id="signup-next-btn" style="height:40px;width: 225px;margin-right: 20%;">NEXT</button> -->
+					        
+					      </div>
+					    </div>
+					  </div>
+				</div>  
+		<!-- [Modal for SignUp end.] -->

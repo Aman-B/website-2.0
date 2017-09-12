@@ -1,0 +1,41 @@
+<div class="modal fade modal-position" id="create-content-modal" style="margin-top:0.2%;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="width:100%;">
+			<div class="modal-header" style="border:none; padding-bottom:0px;">
+				<button class="close" data-dismiss="modal" type="button">&times;</button>
+				<h5 class="modal-title font-class-bold" style="font-size:15px;margin-left:32%;">Create Content</h5>
+			</div>
+			<div class="modal-body" style="padding:6%; padding-top:2%;">
+				<p class="font-class" style="color: #a19e9e; margin-left:21%;">Create Content to get started!</p>
+				<form id="create-content-form" name="signup-form" style="padding-top:6%;">
+					<!-- business-signup-form" -->
+					
+						<img alt="Please select an image/logo to upload." id="create-content-image" src="images/original_upload_image.png" style="margin-left:14%;width:230px; height:209px;">
+						<input id="create-content-file-input" style="margin-top: 5%;width: 74%;margin-left: 20%;" type='file'> 
+						<span>Name :</span><input class="input-style"  name="contname" id="content-name" placeholder="Enter your name.." required type="text" style="margin-top:5%; width: 74%;margin-left: 8%;" >
+						<div id='category-dropdown' style="margin-top:5%;">Category: 
+							  <select style="width: 74%;margin-left: 2%;" id='category-select'>
+							  
+							  </select>
+						</div>
+						<!-- <input class="input-style"  name="conttype" id="content-type" placeholder="Enter type..." required type="text"> -->
+						<div id='type-dropdown' style="margin-top:5%;"><span> Type: </span>
+							  <select style="width: 74%;margin-left: 10%;" id="type-select">
+							  
+							  </select>
+						</div>
+
+						<span>Website :</span><input class="input-style"  name="contweb" id="content-web" placeholder="Enter website.."  type="text" style="margin-top: 3%;width: 73%;margin-left: 4%;">
+						<span>Make :</span><input class="input-style"  name="contmake" id="content-make" placeholder="Enter make.."  type="text" style="margin-top: 5%;width: 74%;margin-left: 8%;">
+						<textarea class="input-style" rows="4" cols="5000" name="contdesc" id="content-desc" placeholder="Enter description..." required type="text" style="border: 1px dotted black;margin-top:11%;padding:3%;"/>
+						<input class="submit btn button blue-btn form-btns" id="create-content-finish-btn"  type="submit" value="Create Content"/>
+					
+				</form>
+			</div>
+			<!-- <div class="modal-footer" style="border:none;">
+				
+				<p class="terms">By signing up, you agree to <a href="terms_of_use.html">Terms Of Use</a></p>
+			</div> -->
+		</div>
+	</div>
+</div>

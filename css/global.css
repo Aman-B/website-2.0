@@ -1,0 +1,27 @@
+.my-error-class {
+    color:#FF0000;  /* red */
+}
+.my-valid-class {
+    color:#00CC00; /* green */
+}
+.form-btns
+{
+    height: 40px;
+    width: 190px;
+    margin-left: 18%;
+    margin-top: 9%;
+}
+
+#email-close-btn
+{
+	margin-left:85%;
+}
+
+textarea
+{
+	resize : none;
+}
+#create-content-form input
+{
+	padding:0;
+}

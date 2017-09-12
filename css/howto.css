@@ -1,0 +1,49 @@
+@font-face { 
+	font-family: myfont;
+	 src: url('../font/seg/segoeui.ttf'); 
+} 
+@font-face { 
+	font-family: myfontbold;
+	 src: url('../font/seg/segoeuib.ttf'); 
+} 
+
+@font-face { 
+	font-family: myfontsemibold;
+	 src: url('../font/seg/segeuibl.ttf'); 
+} 
+
+.font-class
+{
+	font-family: myfont;
+}
+.font-class-bold
+{
+	font-family: myfontbold;
+}
+
+.font-class-semibold
+{
+	font-family: myfontsemibold;
+}
+
+#slideshow { 
+/*    margin: 50px auto; 
+*/    position: relative; 
+    
+    height: 100%; 
+   /* padding: 10px; */
+/*    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+*/}
+
+#slideshow > div { 
+   /* position: absolute; 
+    top: 12%; 
+    
+    bottom: 10px;*/ 
+}
+.points
+{
+	list-style: circle url('../images/dot.png');
+	list-style-position: outside;
+	  margin-left: 1em;
+}

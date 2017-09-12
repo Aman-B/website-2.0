@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>FitBeau</title>
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+
+	<!-- Font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="icon" href="images/logo_alone.png">
+
+	<link rel="stylesheet" href="css/about.css">
+		<link rel="stylesheet" href="css/index.css">
+			<link rel="stylesheet" href="css/global.css">
+
+
+	</head>
+<body>
+	<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">  
+			      <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+			        <!-- <li><a href="#" class="font-class">WHAT WE DO</a></li>
+			        <li><a href="#">WHO WE ARE</a></li>
+			        <li><a href="#">PRICING</a></li> -->
+			        <li class="dropdown"><a href="#" class="dropdown-toggle"style="box-shadow:none;" data-toggle="dropdown"> HOW IT WORKS     <span class="caret"></span></button>
+</a>					<ul class="dropdown-menu" style="left:10px; min-width:144px;">
+			        	<li><a href="howto.html">For Brands</a></li>
+			        	<li><a href="inf_howto.html">For Influencers </a></li>
+			        </ul></li>
+			        <li id="change-two"><a href="index.html">BRAND</a></li>
+               		<li id="change-two"><a href="b_index.html">INFLUENCER</a></li>
+			        <li><a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8">GET APP</a></li>
+			        <li><a href="#">ABOUT US</a></li>
+			        <li><a href="https://blogfitbeau.wordpress.com" target="_blank">BLOG</a></li>
+
+<!-- 			        <li><a href="#">FAQ</a></li>
+ --><!-- 			         <li><button type="button" class="btn navbar-btn font-class-bold" id="nav-signin">SIGN IN</button></li>
+ -->			        <li><button type="button" class="btn navbar-btn blue-btn font-class-bold" id="nav-signup-btn" style="font-size :12px;">SIGN UP</button></li>
+			      </ul>
+
+			      
+			    </div><!-- /.navbar-collapse -->
+
+
+			  </div><!-- /.container-fluid -->
+
+			</nav>
+
+	</header>
+	<!-- [Modal for SignIn Modal end.] -->
+		<div id="signup-container"></div>
+<!-- [Modal for Business Modal] -->
+				<div id="business-modal-container"></div>
+		<!-- [Modal for Business Modal end.] -->
+		<!-- [Modal for Influencer Modal] -->
+				<div id="influencer-modal-container"></div>
+
+				
+		<!-- [Modal for Influencer Modal end.] -->
+
+		<!-- [Modal for email sent Modal] -->
+				
+				<div id="email-sent-modal-container">
+					
+				</div>
+
+		<!-- [Modal for email sent Modal end.] -->
+
+		<!-- [Modal for wait Modal] -->
+				<div id="wait-modal-container">
+					
+				</div>
+
+		<!-- [Modal for wait Modal end.] -->
+
+		<!-- [Modal for create content Modal] -->
+
+				<div id="create-content-modal-container">
+					
+				</div>
+
+		<!-- [Modal for create content Modal end] -->
+
+
+
+
+	<div class="container-fluid-container mcontainer" style="padding-top:10%; width:80%; margin-left:10%;">
+		
+
+		<div class="row">
+			<div class="col-lg-12" style="padding-bottom:4%;">
+				<h1 class="font-class-bold" style="margin-left:35%;">Our Mission</h1>
+			</div>
+
+			<div class="col-lg-12" style="padding-bottom:2%;">
+				<p class="font-class">
+					We strongly believe that everyone deserves to look and feel fit, beautiful and live a healthy lifestyle, and so we’re focused solely on Fitness and Beauty.
+
+					Our mission is to bring together the talent and expertise from influencers and content creators, with the best products and services from brands and businesses, so that you have a platform to spread this with the world
+
+					We’re dedicated to build a more FitBeau world. Join us!
+
+					
+				</p>
+				
+			</div>
+
+
+		</div>
+
+
+
+
+		<div class="row">
+
+			<div class="col-lg-12" style="padding-bottom:4%;">
+				<h4 class="font-class-bold" style="margin-left:45%;">About Us</h4>
+			</div>
+			<div class="col-lg-6" > 
+				<h4> Welcome to FitBeau.com. Our influencer marketing platform is where brands can match with content creators to promote their fitness and beauty products</h4>
+				<p style="padding-top:3%;" class="font-class">
+					FitBeau was inspired by a fitness and beauty directory site the founder built in 2008 which used facebook and twitter to allow businesses to use their own customers to do their ‘advertising’ for them. 
+
+					At the time Facebook was 2 years old (publicly) and twitter only had Steven Fry as their celeb advocate but this was the very start of the future of social media for businesses.
+
+					With our team of fitness and beauty experts, analysts, and developers, and our deep understanding of the evolution of social media, we want to share our insights for you to capitalise on the newest trends fast, so that you stay ahead of the curve.
+				</p>
+			</div>
+			<div class="col-lg-6">
+				<img src="images/coffee.jpg" alt="A coffee photo" style="width:100%;padding-top:4%;">
+			</div>
+	
+		</div>
+
+		<div class="row" style="padding-top:10%;">
+
+
+			<div class="col-lg-6">
+				<img src="images/calc.jpeg" alt="A blue click pen with papers." style="width:100%;padding-top:4%;">
+			</div>
+			
+			<div class="col-lg-6" class="font-class-bold"> 
+				<h4> Brands, Businesses and Agencies</h4>
+				<div style="padding-top:3%;" class="font-class">
+					<b>Use this platform to continuously improve your social media spend ROI.</b>
+					<p style="margin-top:4%;">
+						Our fully integrated app allows our influencers and brands to chat, collaborate and share
+
+						We believe collaboration and communication really brings out the best content. So our App is the easiest way 
+						to discover, connect and collaborate with great talent.  
+
+						Find out how to find the right influencers for your products, and how to get analytics to reduce investment risk by allowing you to make informed decisions
+					</p>
+				</div>
+			</div>
+			
+	
+		</div>
+
+		<div class="row" style="padding-top:10%;">
+
+			
+			<div class="col-lg-6" class="font-class-bold"> 
+				<h4> Macro, Micro-Influencers, and Newbies</h4>
+				<div style="padding-top:3%;" class="font-class">
+					<b>Use this platform and fully integrated app to improve your content quality and appeal to continuously increase your income.</b>
+					<p style="margin-top:4%;">If you're struggling to find fresh content to attract to followers or the right products for your audience, FitBeau offers a faster way to discover new things.</p>
+					
+
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img src="images/smartphone.jpg" alt="A smartphone in hand." style="width:100%;padding-top:3%;">
+			</div>
+	
+		</div>
+
+
+		<div class="row" style="padding-top:10%;">
+
+
+			<div class="col-lg-6">
+				<img src="images/calc.jpeg" alt="A blue click pen with papers." style="width:100%;padding-top:4%;">
+			</div>
+			
+			<div class="col-lg-6" class="font-class-bold"> 
+				<h4> B2B SERVICE PROVIDERS</h4>
+				<div style="padding-top:3%;" class="font-class">
+					<b>Do you provide services that will be valuable to our fitness and beauty brands and businesses?</b>
+					<p style="margin-top:4%;">
+						We want to assist our registered brands with everything they need Get in touch and explain how your services can benefit them.
+					</p>
+				</div>
+			</div>
+			
+	
+		</div>
+
+
+
+	</div>
+	<footer>
+    <div class="footer" id="footer" style="background-color:#45415d;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5  col-md-4 col-sm-12 col-xs-12" style="padding-top:40px;">
+                        <a class="navbar-brand" href="#"><img src="images/logo_light.png" alt=""></a> 
+	                   
+	                    <ul class="social">
+	                         <li> <a  target="_blank" href="https://www.facebook.com/TheFitBeauApp"> <i class=" fa fa-facebook">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://twitter.com/FitBeau"> <i class="fa fa-twitter">   </i> </a> </li>
+   	                        <li> <a target="_blank" href="https://www.instagram.com/the_fitbeau_app/"> <i class="fa fa-instagram">   </i> </a> </li>
+							<li> <a target="_blank" href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg"> <i class="fa fa-youtube">   </i> </a> </li>
+
+	                        <li> <a target="_blank" href="https://www.linkedin.com/company-beta/24794689/"> <i class="fa fa-linkedin">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://www.pinterest.com/the_fitbeau_app/"> <i class="fa fa-pinterest">   </i> </a> </li>
+	                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> FitBeau App </h3>
+                    <ul>
+                        <!-- <li> <a href="#"> Features </a> </li>
+                        <li> <a href="#"> Pricing </a> </li> -->
+                        <li> <a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8"> App Store </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> Who We Are </h3>
+                    <ul>
+                        <li> <a href="about_us.html"> Who We Are </a> </li>
+			        	<li><a href="https://blogfitbeau.wordpress.com" target="_blank">Blog</a></li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> How it works </h3>
+                    <ul>
+                        <li> <a href="howto.html"> For Brands </a> </li>
+                        <li> <a href="inf_howto.html"> For Influencers </a> </li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+              <!--   <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Support </h3>
+                    <ul>
+                        <li> <a href="#"> Who We Are </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+ 
+                    </ul>
+                </div> -->
+             <!--    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> NEWSLETTER </h3>
+                    <p>Want weekly tips? SignUp for our newsletter now.</p>
+                    <ul>
+
+                        <li>
+                            <div class="input-group"style="border:0;">
+							  <input id="signup-email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
+							  <span class="input-group-addon" id="signup-btn" style="background:#2d2343; color:#FFFFFF; border: 2px solid #2d2343;">SignUp</span>
+							</div>
+
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <!-- <div class="footer-bottom">
+        <div class="container">
+            <p class="text-center"> Copyright © Footer 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div> -->
+    <!--/.footer-bottom--> 
+</footer>
+	
+
+
+	
+
+	<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+	
+
+
+	<script type="text/javascript" src="js/bundle.js"></script>
+		<!-- <script type="text/javascript" src="js/index.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module '/Applications/MAMP/htdocs/index.js' from '/Applications/MAMP/htdocs'");

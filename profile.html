@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>FitBeau</title>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><!-- Latest compiled and minified CSS -->
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Optional theme -->
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/jquery.validate.js" type="text/javascript"></script><!-- Font awesome -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <link href="images/logo_alone.png" rel="icon">
+      <link href="css/about.css" rel="stylesheet">
+      <link href="css/index.css" rel="stylesheet">
+      <link href="css/global.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/profile.css">
+      <script type="text/javascript" src="js/jquery.validate.js"></script>
+       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript" src="js/profile.js"></script>
+    
+     <!-- For the graph. -->
+       
+		<script>
+			   google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Month');
+      data.addColumn('number', 'Facebook');
+      data.addColumn('number', 'Instagram');
+     
+
+      data.addRows([
+        [new Date(2017, 11),  37.8, 80.8],
+        [new Date(2017, 10),  30.9, 69.5],
+        [new Date(2017, 9),  25.4,   57],
+        [new Date(2017, 8),  11.7, 18.8],
+        [new Date(2017, 7),  11.9, 17.6],
+        [new Date(2017, 6),   8.8, 13.6],
+        [new Date(2017, 5),   7.6, 12.3],
+        [new Date(2017, 4),  12.3, 29.2],
+        [new Date(2017, 3),  16.9, 42.9],
+        [new Date(2017, 2), 12.8, 30.9],
+        [new Date(2017, 1),  5.3,  7.9],
+        [new Date(2017, 0),  6.6,  8.4]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Your media post reach based on likes (1:1000)',
+          subtitle: 'per month'
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+		</script>
+   </head>
+   <body>
+    <script>
+        var FB_postIDArray=[];
+        console.log('year '+ (new Date()).getFullYear());
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '1824129074564129',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              version          : 'v2.10'
+            });
+            FB.AppEvents.logPageView();
+            var prev_year= (new Date()).getFullYear()-1;
+          /*,{"until":"1502326861","since":"1451610061"}*/
+            FB_since=Math.floor((new Date(prev_year+'-01-01 00:00:00')).getTime()/1000);
+
+            FB_until=Math.round((new Date()).getTime() / 1000);
+
+            FB.getLoginStatus(function(response){
+                console.log(response);
+                if (response.status === 'connected') 
+                {
+                    FB.api('/me/posts','GET',{"until":FB_until,"since":FB_since},function(response)
+                    {
+                        getData(response);
+                    });
+                }
+                
+                
+                
+            });
+          };
+
+          function getData(response) 
+          {
+                console.log(response);
+               // console.log(response.data[0].id);
+                // FB_postIDArray=new Array(response.data.length)
+                console.log(response.data[0].created_time);
+                for (var i = 0; i < response.data.length; i++) {
+
+                  console.log(response.data[i].id);
+                  FB_postIDArray[i]=response.data[i].id;
+                };
+                console.log(FB_postIDArray);
+                for (var i = 0; i < FB_postIDArray.length; i++) {
+                  
+
+                  FB.api('/'+FB_postIDArray[i]+'/likes?summary=1', function(response) {
+                    console.log(response.summary.total_count);
+                    
+                      console.log(response);
+                    
+                  }); 
+                };
+            }
+/*
+          FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+              console.log('Logged in.');
+               FB.api('/me', function(response) {
+                 alert(response.name);
+               }); 
+            }
+            else {
+              console.log('Not logged in');
+            }
+          });*/
+         
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+          
+    </script>
+
+      <header>
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+                  <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html"><img alt="" src="images/logo.png"></a>
+               </div>
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+                     <!-- <li><a href="#" class="font-class">WHAT WE DO</a></li>
+                        <li><a href="#">WHO WE ARE</a></li>
+                        <li><a href="#">PRICING</a></li> -->
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="box-shadow:none;">HOW IT WORKS <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="left:10px; min-width:144px;">
+                           <li>
+                              <a href="howto.html">For Brands</a>
+                           </li>
+                           <li>
+                              <a href="inf_howto.html">For Influencers</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li id="change-two">
+                        <a href="index.html">BRAND</a>
+                     </li>
+                     <li id="change-two">
+                        <a href="b_index.html">INFLUENCER</a>
+                     </li>
+                     <li>
+                        <a href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8" target="_blank">GET APP</a>
+                     </li>
+                     <li>
+                        <a href="#">ABOUT US</a>
+                     </li>
+                     <li><a href="https://blogfitbeau.wordpress.com" target="_blank">BLOG</a></li>
+                     <!--                    <li><a href="#">FAQ</a></li>
+                        --><!--                     <li><button type="button" class="btn navbar-btn font-class-bold" id="nav-signin">SIGN IN</button></li>
+                        -->
+                     <li><button class="btn navbar-btn blue-btn font-class-bold" id="nav-signup-btn" style="font-size :12px;" type="button">SIGN UP</button></li>
+                  </ul>
+               </div>
+               <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+         </nav>
+      </header>
+      <!-- [Modal for SignIn Modal end.] -->
+      <div id="signup-container"></div>
+      <!-- [Modal for Business Modal] -->
+      <div id="business-modal-container"></div>
+      <!-- [Modal for Business Modal end.] -->
+      <!-- [Modal for Influencer Modal] -->
+      <div id="influencer-modal-container"></div>
+      <!-- [Modal for Influencer Modal end.] -->
+      <!-- [Modal for email sent Modal] -->
+      <div id="email-sent-modal-container"></div>
+      <!-- [Modal for email sent Modal end.] -->
+      <!-- [Modal for wait Modal] -->
+      <div id="wait-modal-container"></div>
+      <!-- [Modal for wait Modal end.] -->
+      <!-- [Modal for create content Modal] -->
+      <div id="create-content-modal-container"></div>
+      <!-- [Modal for create content Modal end] -->
+      <div id="spinner" style="margin-left:44%; padding-top:16%; font-size:100px;color:#A45083;padding-bottom: 14%;">
+      <i  class="fa fa-spinner fa-spin" ></i>
+      </div>
+
+      <div class="container-fluid-container mcontainer" style="padding-top:10%;">
+         <!-- Put page content here -->
+         <button id="fb-login-button">FB signin!</button>
+         <button id="twitter-login-button">Twitter signin!</button>
+
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="row">
+                  <div class="col-lg-2">
+                     <img class="img-responsive"src="images/profile_image.png" alt="A Profile Picture." id="profile-image">
+                  </div>
+                  <div class="col-lg-9">
+                     <!-- First row -->
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <div class="row">
+                              <div class="col-lg-12">
+                                 <div class="row"> 
+                                      <p class="col-lg-2 font-class" id="user-name-surname"> </p>
+                                      <p class="col-lg-1 font-class" style="margin-left:-2%;" id="user-title"> </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Second row -->
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <ul id="icon-list">
+                             <li> <img src="images/profile_icon_web.png" alt=""></li>
+                             <li> <img src="images/profile_icon_fb.png" alt=""></li>
+                             <li> <img src="images/profile_icon_snap.png" alt=""></li>
+                             <li> <img src="images/profile_icon_insta.png" alt=""></li>
+                             <li> <img src="images/profile_icon_twt.png" alt=""></li>
+                             <li> <img src="images/profile_icon_yt.png" alt=""></li>
+                              
+
+                           </ul>
+                           
+                        </div>
+                     </div>
+                     <!-- Third row -->
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio cum veritatis vero quam odit molestiae recusandae maxime officia, harum molestias illo laudantium commodi fuga quae, eos sed, provident, architecto dolorum.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-12" style="margin-top:5%;" id="ftw">
+            	
+            </div>
+         </div>
+
+		 <!-- Analytic row start. -->
+         <div class="row" style="margin-top:5%;"> 
+         	<div class="col-lg-12">
+         		<div class="col-lg-3 col-lg-offset-5">
+         			<h2 class="font-class"> Analytic</h2>
+         		</div>
+         		<div class="col-lg-12">
+         			<!-- For the graph. -->
+    					<div id="linechart_material">
+    							
+    					</div>
+         		</div>
+         	</div>
+         </div>
+		 <!-- Analytic row end. -->
+
+
+      </div>
+      <footer>
+         <div class="footer" id="footer" style="background-color:#45415d;">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-5  col-md-4 col-sm-12 col-xs-12" style="padding-top:40px;">
+                     <a class="navbar-brand" href="#"><img src="images/logo_light.png" alt=""></a> 
+                     <ul class="social">
+                        <li> <a  target="_blank" href="https://www.facebook.com/TheFitBeauApp"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a target="_blank" href="https://twitter.com/FitBeau"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a target="_blank" href="https://www.instagram.com/the_fitbeau_app/"> <i class="fa fa-instagram">   </i> </a> </li>
+                        <li> <a target="_blank" href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg"> <i class="fa fa-youtube">   </i> </a> </li>
+                        <li> <a target="_blank" href="https://www.linkedin.com/company-beta/24794689/"> <i class="fa fa-linkedin">   </i> </a> </li>
+                        <li> <a target="_blank" href="https://www.pinterest.com/the_fitbeau_app/"> <i class="fa fa-pinterest">   </i> </a> </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                     <h3> FitBeau App </h3>
+                     <ul>
+                        <!-- <li> <a href="#"> Features </a> </li>
+                           <li> <a href="#"> Pricing </a> </li> -->
+                        <li> <a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8"> App Store </a> </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                     <h3> Who We Are </h3>
+                     <ul>
+                        <li> <a href="about_us.html"> Who We Are </a> </li>
+                        <li><a href="https://blogfitbeau.wordpress.com" target="_blank">Blog</a></li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                           <li> <a href="#"> Pricing Shop </a> </li> -->
+                     </ul>
+                  </div>
+                  <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                     <h3> How it works </h3>
+                     <ul>
+                        <li> <a href="howto.html"> For Brands </a> </li>
+                        <li> <a href="inf_howto.html"> For Influencers </a> </li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                           <li> <a href="#"> Pricing Shop </a> </li> -->
+                     </ul>
+                  </div>
+                  <!--   <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                     <h3> Support </h3>
+                     <ul>
+                         <li> <a href="#"> Who We Are </a> </li>
+                         <li> <a href="#"> FAQ </a> </li>
+                         <li> <a href="#"> Contact Us </a> </li>
+                     
+                     </ul>
+                     </div> -->
+                  <!--    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                     <h3> NEWSLETTER </h3>
+                     <p>Want weekly tips? SignUp for our newsletter now.</p>
+                     <ul>
+                     
+                         <li>
+                             <div class="input-group"style="border:0;">
+                     <input id="signup-email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
+                     <span class="input-group-addon" id="signup-btn" style="background:#2d2343; color:#FFFFFF; border: 2px solid #2d2343;">SignUp</span>
+                     </div>
+                     
+                         </li>
+                     </ul>
+                     </div> -->
+               </div>
+               <!--/.row--> 
+            </div>
+            <!--/.container--> 
+         </div>
+         <!--/.footer-->
+         <!-- <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center"> Copyright © Footer 2014. All right reserved. </p>
+                <div class="pull-right">
+                    <ul class="nav nav-pills payments">
+                        <li><i class="fa fa-cc-visa"></i></li>
+                        <li><i class="fa fa-cc-mastercard"></i></li>
+                        <li><i class="fa fa-cc-amex"></i></li>
+                        <li><i class="fa fa-cc-paypal"></i></li>
+                    </ul> 
+                </div>
+            </div>
+            </div> -->
+         <!--/.footer-bottom--> 
+      </footer>
+      <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script> 
+      <script src="js/bundle.js" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+       <!-- For the graph. -->
+
+	   
+   </body>
+</html>
+

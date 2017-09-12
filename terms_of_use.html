@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>FitBeau</title>
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+
+	<!-- Font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="icon" href="images/logo_alone.png">
+
+	<link rel="stylesheet" href="css/about.css">
+		<link rel="stylesheet" href="css/global.css">
+
+
+	</head>
+<body>
+	<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header" style="margin-left: 40px;margin-top: -6px;">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse navlinks" id="bs-example-navbar-collapse-1">  
+			      <ul class="nav navbar-nav font-class pull-right" style="padding-top: 2px; padding-right: 90px;">
+			        <!-- <li><a href="#" class="font-class">WHAT WE DO</a></li>
+			        <li><a href="#">WHO WE ARE</a></li>
+			        <li><a href="#">PRICING</a></li> -->
+			        <li class="dropdown"><a href="#" class="dropdown-toggle"style="box-shadow:none;" data-toggle="dropdown"> HOW IT WORKS     <span class="caret"></span></button>
+</a>					<ul class="dropdown-menu" style="left:10px; min-width:144px;">
+			        	<li><a href="#">For Brands</a></li>
+			        	<li><a href="inf_howto.html">For Influencers </a></li>
+			        </ul></li>
+			        <li id="change-two"><a href="index.html">BRAND</a></li>
+               		<li id="change-two"><a href="b_index.html">INFLUENCER</a></li>
+			        <li><a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8">GET APP</a></li>
+			        <li><a href="about_us.html">ABOUT US</a></li>
+			        <li><a href="https://blogfitbeau.wordpress.com" target="_blank">BLOG</a></li>
+<!-- 			        <li><a href="#">FAQ</a></li>
+ --><!-- 			         <li><button type="button" class="btn navbar-btn font-class-bold" id="nav-signin">SIGN IN</button></li>
+ -->			        <li><button type="button" class="btn navbar-btn blue-btn font-class-bold" id="nav-signup-btn" style="font-size :12px;">SIGN UP</button></li>
+			      </ul>
+
+			      
+			    </div><!-- /.navbar-collapse -->
+
+
+			  </div><!-- /.container-fluid -->
+
+			</nav>
+
+	</header>
+	<div id="signup-container"></div>
+
+		
+
+	
+		
+		<!-- [Modal for Business Modal] -->
+				<div id="business-modal-container"></div>
+		<!-- [Modal for Business Modal end.] -->
+		<!-- [Modal for Influencer Modal] -->
+				<div id="influencer-modal-container"></div>
+
+				
+		<!-- [Modal for Influencer Modal end.] -->
+
+		<!-- [Modal for email sent Modal] -->
+				
+				<div id="email-sent-modal-container">
+					
+				</div>
+
+		<!-- [Modal for email sent Modal end.] -->
+
+		<!-- [Modal for wait Modal] -->
+				<div id="wait-modal-container">
+					
+				</div>
+
+		<!-- [Modal for wait Modal end.] -->
+
+		<!-- [Modal for create content Modal] -->
+
+				<div id="create-content-modal-container">
+					
+				</div>
+
+
+
+
+	<div class="container-fluid-container mcontainer" style="padding-top:10%; width:80%; margin-left:10%;">
+		
+		<div class="row">
+
+			<div class="col-lg-12" style="padding-bottom:4%;">
+				<h4 class="font-class-bold" style="margin-left:45%;">Terms Of Use</h4>
+			</div>
+			
+			<div class="col-lg-12" > 
+				<p>
+					PRIVACY POLICY MODEL FOR MOBILE APPLICATIONS This privacy policy governs your use of the software application FitBeau (“Application”) for mobile devices that was created by NewMedia Techies. The Application is a product sharing and promoting app, connecting new media bloggers with start-ups and SMEs. Bloggers and businesses search for each other so the blogger finds the right products to promote.   What information does the Application obtain and how is it used? All content is user generated. Users complete forms to describe themselves or the content the submit to the site. This is used to improve search features for users. Users may want to communicate with each other to negotiate promote deals. This application facilitates these interactions but this application and its creators are not liable for any arrangements made between users. User Provided Information  The Application obtains the information you provide when you download and register the Application. Registration with us is mandatory in order to be able to use the basic features of the Application. When you register with us and use the Application, you generally provide (a) your name, email address, age, user name, password and other registration information; (b) transaction-related information, such as when you make purchases, respond to any offers, or download or use applications from us; (c) information you provide us when you contact us for help; (d) credit card information for purchase and use of the Application, and; (e) information you enter into our system when using the Application, such as contact information and project management information. We may also use the information you provided us to contact your from time to time to provide you with important information, required notices and marketing promotions. Automatically Collected Information  In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.   Does the Application collect precise real time location information of the device? This Application does not collect precise information about the location of your mobile device.    Do third parties see and/or have access to information obtained by the Application?   Only aggregated, anonymized data is periodically transmitted to external services to help us improve the Application and our service. We will share your information with third parties only in the ways that are described in this privacy statement. We may disclose User Provided and Automatically Collected Information: · as required by law, such as to comply with a subpoena, or similar legal process; · when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request; · with our trusted services providers who work on our behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement. · if NewMedia Techies is involved in a merger, acquisition, or sale of all or a portion of its assets, you will be notified via email and/or a prominent notice on our Web site of any change in ownership or uses of this information, as well as any choices you may have regarding this information.  What are my opt-out rights? You can stop all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network. You can also request to opt-out via email, at newmedia-privacy@techie.com.   Data Retention Policy, Managing Your Information We will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. We will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you’d like us to delete User Provided Data that you have provided via the Application, please contact us at newmedia-privacy@techie.com and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.   Children We do not use the Application to knowingly solicit data from or market to children under the age of 13. If a parent or guardian becomes aware that his or her child has provided us with information without their consent, he or she should contact us at newmedia-privacy@techie.com. We will delete such information from our files within a reasonable time.   Security We are concerned about safeguarding the confidentiality of your information. We provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve our Application. Please be aware that, although we endeavour provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.   Changes This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy here and informing you via email. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes. You can check the history of this policy by www.fitbeau.com.   Your Consent By using the Application, you are consenting to our processing of your information as set forth in this Privacy Policy now and as amended by us. "Processing,” means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information, all of which activities will take place in the United Kingdom. If you reside outside the United Kingdom your information will be transferred, processed and stored there under United Kingdom privacy standards.    Contact us If you have any questions regarding privacy while using the Application, or have questions about our practices, please contact us via email at -newmedia-privacy@techie.com. 
+				</p>	
+			</div>
+
+		</div>
+
+
+
+	</div>
+<footer>
+    <div class="footer" id="footer" style="background-color:#45415d;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5  col-md-4 col-sm-12 col-xs-12" style="padding-top:40px;">
+                        <a class="navbar-brand" href="#"><img src="images/logo_light.png" alt=""></a> 
+	                   
+	                    <ul class="social">
+	                         <li> <a  target="_blank" href="https://www.facebook.com/TheFitBeauApp"> <i class=" fa fa-facebook">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://twitter.com/FitBeau"> <i class="fa fa-twitter">   </i> </a> </li>
+   	                        <li> <a target="_blank" href="https://www.instagram.com/the_fitbeau_app/"> <i class="fa fa-instagram">   </i> </a> </li>
+							<li> <a target="_blank" href="https://www.youtube.com/channel/UCkvCyEAPE24jEESR0Z9duvg"> <i class="fa fa-youtube">   </i> </a> </li>
+
+	                        <li> <a target="_blank" href="https://www.linkedin.com/company-beta/24794689/"> <i class="fa fa-linkedin">   </i> </a> </li>
+	                        <li> <a target="_blank" href="https://www.pinterest.com/the_fitbeau_app/"> <i class="fa fa-pinterest">   </i> </a> </li>
+	                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> FitBeau App </h3>
+                    <ul>
+                        <!-- <li> <a href="#"> Features </a> </li>
+                        <li> <a href="#"> Pricing </a> </li> -->
+                        <li> <a target="_blank" href="https://itunes.apple.com/us/app/fitbeau/id1231657729?mt=8"> App Store </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> Who We Are </h3>
+                    <ul>
+                        <li> <a href="about_us.html"> Who We Are </a> </li>
+			        	<li><a href="https://blogfitbeau.wordpress.com" target="_blank">Blog</a></li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-4">
+                    <h3> How it works </h3>
+                    <ul>
+                        <li> <a href="howto.html"> For Brands </a> </li>
+                        <li> <a href="inf_howto.html"> For Influencers </a> </li>
+                        <!-- <li> <a href="#"> Case Study </a> </li>
+                        <li> <a href="#"> Pricing Shop </a> </li> -->
+                    </ul>
+                </div>
+              <!--   <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Support </h3>
+                    <ul>
+                        <li> <a href="#"> Who We Are </a> </li>
+                        <li> <a href="#"> FAQ </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+ 
+                    </ul>
+                </div> -->
+             <!--    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> NEWSLETTER </h3>
+                    <p>Want weekly tips? SignUp for our newsletter now.</p>
+                    <ul>
+
+                        <li>
+                            <div class="input-group"style="border:0;">
+							  <input id="signup-email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
+							  <span class="input-group-addon" id="signup-btn" style="background:#2d2343; color:#FFFFFF; border: 2px solid #2d2343;">SignUp</span>
+							</div>
+
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <!-- <div class="footer-bottom">
+        <div class="container">
+            <p class="text-center"> Copyright © Footer 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div> -->
+    <!--/.footer-bottom--> 
+</footer>
+	
+
+
+	
+
+	<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+	
+
+
+	<script type="text/javascript" src="js/bundle.js"></script>
+		<!-- <script type="text/javascript" src="js/index.js"></script> -->
+
+</body>
+</html>
