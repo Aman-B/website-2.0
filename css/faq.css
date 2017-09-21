@@ -1,0 +1,26 @@
+body {
+  background-color:#EEEEEE; font-size:13px;color:#000;	
+}
+
+.faq-content {
+  border-bottom: 1px solid #C1C1C1;
+  padding-right: 2px;
+  padding-left: 0px;
+  padding-bottom: 15px;
+  padding-top: 25px;
+}
+
+.content-heading {
+  color: #494949;
+  font-weight: bold;
+}
+
+p {
+  color:#5A5A5A;
+}
+
+.search-button {
+  background: none;
+  border: 1px solid #B4B4B4;
+  border-left: none;
+}

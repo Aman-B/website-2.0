@@ -933,7 +933,17 @@ var index =(function ($)
 				};
 
 				// Upload file and metadata to the object 'images/mountains.jpg'
-				var uploadTask = storageRef.child(user.uid+'/profileImage/' + image_file.name).put(image_file, metadata);
+				var uploadTask ;
+				if(isContent)
+				{
+					 uploadTask = storageRef.child(user.uid+'/content/' + image_file.name).put(image_file, metadata);
+
+
+				}
+				else
+				{
+					uploadTask = storageRef.child(user.uid+'/profileImage/' + image_file.name).put(image_file, metadata);
+				}
 
 				// Listen for state changes, errors, and completion of the upload.
 				uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'

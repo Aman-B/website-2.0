@@ -17,8 +17,6 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.validate.js"></script>
-
   </head>
 
   <body>
@@ -73,10 +71,10 @@
     <!-- [Modal for create content Modal] -->
     <div id="create-content-modal-container"></div><!-- [Modal for create content Modal end] -->
 
-    <div class="container-fluid-container mcontainer" style="margin-top: 5%;width: 100%;margin-left: 10%;">
+    <div class="container-fluid-container mcontainer" style="margin-top: 7%;width: 100%;margin-left: 10%;">
       <div class="form-bg" style="margin: 0% 0 5% 0;">
-        <h3> Create Account </h3>
-        <form id="create-content-page-form" method="post" action="#" style="margin-top: 5%;">
+        <h3> Create Tips </h3>
+        <form method="post" action="#" style="margin-top: 5%;">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <!-- <div class="col-md-1 col-sm-1"> </div> --><!-- left waste div -->
             <!-- center part start -->
@@ -85,8 +83,12 @@
               <div class="col-md-12 col-sm-12 col-xs-12"><!-- top part start -->
                 <!-- right start -->
                 <div class="col-md-6 col-sm-6 col-xs-12"> 
-                  <img alt="Please select an image/logo to upload." id="create-content-page-image" src="images/original_upload_image.png" >
-                  <input id="create-content-page-file-input" style="margin-top: 5%;width: 74%;margin-left: 20%;" type='file'>                                                     
+                  <div class="form_profile_image" >
+                    <img src="images/create_content/profile_background.png" class="img-responsive" />
+                    <div class="form-center-image" >
+                      <a href="#"> <img src="images/create_account/form-small-img.png" class="img-responsive" /> </a>
+                    </div>                                                       
+                  </div>                                                       
                 </div>
                 <!-- right end --> 
                 <div class="col-xs-12" style="width:5%;height: 15px;"> </div>
@@ -95,29 +97,44 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                   <div class="">   
                     <div class="form-group margin-bottom">
-                      <input type="text" class="form-control form-imput-color" id="content-page-name"  placeholder="Name Surname * :" required>
+                      <input type="text" class="form-control form-imput-color" placeholder="Title * :">
                     </div>
 
-                    <div class="form-group margin-bottom" id='category-page-dropdown'>
-                      <select name="" class="form-control form-imput-color" placeholder="Category :" id='category-page-select' >
-                        <option disabled selected>Category : </option>
-                        
-                      </select>
-                    </div>
-                    
-                    <div class="form-group margin-bottom" id='type-page-dropdown'>
-                      <select name="" class="form-control form-imput-color" id='type-page-select'>
-                        <option disabled selected>Type : </option>
-                        
+                    <div class="form-group margin-bottom">
+                      <select name="" class="form-control form-imput-color">
+                        <option>Platform : </option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
                       </select>
                     </div>
                     
                     <div class="form-group margin-bottom">
-                      <input type="text" class="form-control form-imput-color"  id="content-page-web" placeholder="Website * :">
+                      <select name="" class="form-control form-imput-color">
+                        <option>Topic : </option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                      </select>
                     </div>
-
+                    
                     <div class="form-group margin-bottom">
-                      <input type="text" class="form-control form-imput-color" id="content-page-make" placeholder="Make * :">
+                      <select name="" class="form-control form-imput-color">
+                        <option>Topic to improve: </option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group margin-bottom">
+                      <input type="text" class="form-control form-imput-color" placeholder="Website :">
                     </div>
 
                   </div>
@@ -128,13 +145,13 @@
               <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 1%;">
                 <div class="col-md-11 col-sm-11 col-xs-12" style="width: 89%;">
                   <div class="form-group margin-bottom">
-                    <textarea class="input-style form-control form-input-color" rows="5" cols="50" name="contdesc" id="content-page-desc" placeholder="Enter description..." required type="text" ></textarea>
+                    <textarea class="form-control form-imput-color" rows="5" cols="50" placeholder="Description :" id="comment"></textarea>
                   </div>
                 </div>
               </div>
               
               <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0% 0% 3% 0%; text-align:center;">
-                <input type="submit" id="create-content-page-finish-btn" class="submit btn create-account-button" value="Create Content"/>
+                <button type="submit" class="btn create-account-button">Submit</button>
               </div>
           
             </div>
@@ -244,8 +261,6 @@
       <!--/.footer-bottom-->
     </footer>
     <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script> 
-    <script src="js/bundle.js" type="text/javascript"></script> 
-    <script src="js/create_content_bundle.js" type="text/javascript"></script>
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script src="js/bundle.js" type="text/javascript"></script> <!-- <script type="text/javascript" src="js/index.js"></script> -->
   </body>
 </html>
