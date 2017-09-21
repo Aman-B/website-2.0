@@ -25,8 +25,8 @@ var index =(function ($)
 	    storageBucket: "fitbeau-5606d.appspot.com",
 	    messagingSenderId: "987676980472"
 	  };
-	  firebase.initializeApp(config);*/
-
+	  firebase.initializeApp(config);
+*/
 	//var validate = require("validate.js");
 	var click=false;
 	
@@ -60,7 +60,7 @@ var index =(function ($)
 	/* For instagram*/
 	var instagram = {
 		client_id : "c759d889ae7145128d33b14e84be1068",
-		redirect_uri : "http://www.fitbeau.com/profile.html",
+		redirect_uri : "http://localhost:8888/website/profile.html",
 		response_type : "token"
 	};
 
@@ -87,7 +87,7 @@ var index =(function ($)
 
 		
 		 	
-			
+			console.log('yolo');
 		 
 
 		 
@@ -136,8 +136,10 @@ var index =(function ($)
   		  $("#fb-login-button").click( function() {
   		  	// body...
   		  	 var provider = new firebase.auth.FacebookAuthProvider();
-			 /* provider.addScope('email');
-			  provider.addScope('user_friends');*/
+			  provider.addScope('email');
+			  provider.addScope('user_friends');
+			  provider.addScope('manage_pages');
+			  provider.addScope('read_insights');
 			 firebase.auth().signInWithPopup(provider).then(function(result) {
 			  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
 			  FB_token = result.credential.accessToken;
@@ -272,12 +274,18 @@ var index =(function ($)
 			$(".mcontainer").css("visibility","hidden");
 			getProfileBio();
 			getProfileData();
+
+			/*grab access token of instagram from URL.*/
+			console.log(window.location.href.toString());
+			var access_token=window.location.href.toString().split('=');
+			console.log(access_token[1]);
 			
 		}
 
 
 		//$('#signin-modal').modal('show'); 
-		$('#insta').click(function (){
+		$('#insta-login-button').click(function (){
+			console.log('insta');
 			console.log(''+instagram["client_id"]+" uri "+instagram["redirect_uri"] +" rt "+instagram["response_type"]);
 			window.location.replace("https://api.instagram.com/oauth/authorize/?client_id="+instagram["client_id"]+"&redirect_uri="+instagram["redirect_uri"]+"&response_type="+instagram["response_type"]+"&scope=follower_list");
 		})
@@ -7768,8 +7776,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"stream":491,"util":503}],50:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"stream":491,"util":503}],50:[function(require,module,exports){
 
 /*!
  *  Copyright 2010 LearnBoost <dev@learnboost.com>
@@ -9474,8 +9482,8 @@ CombinedStream.prototype._emitError = function(err) {
   this.emit('error', err);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"delayed-stream":59,"stream":491,"util":503}],57:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"delayed-stream":59,"stream":491,"util":503}],57:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -9585,8 +9593,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426}],58:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426}],58:[function(require,module,exports){
 (function (Buffer){
 /*!
  * @description Recursive object extending
@@ -38478,8 +38486,8 @@ module.exports = {
 
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"./utils":240,"assert-plus":49,"crypto":379,"http":492,"jsprim":251,"sshpk":293,"util":503}],240:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"./utils":240,"assert-plus":49,"crypto":379,"http":492,"jsprim":251,"sshpk":293,"util":503}],240:[function(require,module,exports){
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
 var assert = require('assert-plus');
@@ -41892,8 +41900,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"stream":491,"util":503}],253:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"stream":491,"util":503}],253:[function(require,module,exports){
 module.exports={
   "application/1d-interleaved-parityfec": {
     "source": "iana"
@@ -57548,8 +57556,8 @@ Key._oldVersionDetect = function (obj) {
 	return ([1, 0]);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"./algs":276,"./dhe":278,"./ed-compat":279,"./errors":280,"./fingerprint":281,"./formats/auto":282,"./formats/pem":284,"./formats/pkcs1":285,"./formats/pkcs8":286,"./formats/rfc4253":287,"./formats/ssh":289,"./formats/ssh-private":288,"./private-key":295,"./signature":296,"./utils":298,"assert-plus":299,"crypto":379}],295:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"./algs":276,"./dhe":278,"./ed-compat":279,"./errors":280,"./fingerprint":281,"./formats/auto":282,"./formats/pem":284,"./formats/pkcs1":285,"./formats/pkcs8":286,"./formats/rfc4253":287,"./formats/ssh":289,"./formats/ssh-private":288,"./private-key":295,"./signature":296,"./utils":298,"assert-plus":299,"crypto":379}],295:[function(require,module,exports){
 (function (Buffer){
 // Copyright 2017 Joyent, Inc.
 
@@ -58570,7 +58578,7 @@ function opensshCipherInfo(cipher) {
 }).call(this,require("buffer").Buffer)
 },{"./private-key":295,"assert-plus":299,"buffer":369,"crypto":379,"jsbn":244}],299:[function(require,module,exports){
 arguments[4][252][0].apply(exports,arguments)
-},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"dup":252,"stream":491,"util":503}],300:[function(require,module,exports){
+},{"../../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"dup":252,"stream":491,"util":503}],300:[function(require,module,exports){
 (function (Buffer){
 var util = require('util')
 var Stream = require('stream')
@@ -64325,7 +64333,7 @@ WError.prototype.cause = function we_cause(c)
 
 },{"assert-plus":319,"core-util-is":57,"extsprintf":64,"util":503}],319:[function(require,module,exports){
 arguments[4][252][0].apply(exports,arguments)
-},{"../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"dup":252,"stream":491,"util":503}],320:[function(require,module,exports){
+},{"../../../../../../../../../usr/local/lib/node_modules/watchify/node_modules/is-buffer/index.js":426,"_process":456,"assert":334,"dup":252,"stream":491,"util":503}],320:[function(require,module,exports){
 var asn1 = exports;
 
 asn1.bignum = require('bn.js');

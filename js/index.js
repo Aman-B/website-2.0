@@ -24,8 +24,8 @@ var index =(function ($)
 	    storageBucket: "fitbeau-5606d.appspot.com",
 	    messagingSenderId: "987676980472"
 	  };
-	  firebase.initializeApp(config);*/
-
+	  firebase.initializeApp(config);
+*/
 	//var validate = require("validate.js");
 	var click=false;
 	
@@ -59,7 +59,7 @@ var index =(function ($)
 	/* For instagram*/
 	var instagram = {
 		client_id : "c759d889ae7145128d33b14e84be1068",
-		redirect_uri : "http://www.fitbeau.com/profile.html",
+		redirect_uri : "http://localhost:8888/website/profile.html",
 		response_type : "token"
 	};
 
@@ -86,7 +86,7 @@ var index =(function ($)
 
 		
 		 	
-			
+			console.log('yolo');
 		 
 
 		 
@@ -135,8 +135,10 @@ var index =(function ($)
   		  $("#fb-login-button").click( function() {
   		  	// body...
   		  	 var provider = new firebase.auth.FacebookAuthProvider();
-			 /* provider.addScope('email');
-			  provider.addScope('user_friends');*/
+			  provider.addScope('email');
+			  provider.addScope('user_friends');
+			  provider.addScope('manage_pages');
+			  provider.addScope('read_insights');
 			 firebase.auth().signInWithPopup(provider).then(function(result) {
 			  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
 			  FB_token = result.credential.accessToken;
@@ -271,12 +273,18 @@ var index =(function ($)
 			$(".mcontainer").css("visibility","hidden");
 			getProfileBio();
 			getProfileData();
+
+			/*grab access token of instagram from URL.*/
+			console.log(window.location.href.toString());
+			var access_token=window.location.href.toString().split('=');
+			console.log(access_token[1]);
 			
 		}
 
 
 		//$('#signin-modal').modal('show'); 
-		$('#insta').click(function (){
+		$('#insta-login-button').click(function (){
+			console.log('insta');
 			console.log(''+instagram["client_id"]+" uri "+instagram["redirect_uri"] +" rt "+instagram["response_type"]);
 			window.location.replace("https://api.instagram.com/oauth/authorize/?client_id="+instagram["client_id"]+"&redirect_uri="+instagram["redirect_uri"]+"&response_type="+instagram["response_type"]+"&scope=follower_list");
 		})

@@ -1,0 +1,97 @@
+﻿body {
+  background-color:#eeeeee; font-size:13px;color:#000;	
+}
+
+/* .container{
+	max-width:1300px;width:100%;
+} */
+
+.form-bg {
+  background-color:#ffffff;
+  width: 80%;
+  display: inline-block;
+  height:100%;	
+}
+
+.form-bg h3 {
+  text-align:center;
+  color:#000;
+  font-size:19px;	
+}
+
+.form_icon {
+  background-color:#eaeaea;
+  border-radius:20px;
+  padding:20px 0px 20px 0px;
+}
+
+.form_icon img {
+  text-align: center;
+  margin: 0 auto;
+  height: 74%;
+}
+
+.form_smallicon {
+  position: absolute;
+  top: 22%;
+  right: 0px;
+  left: 0;
+  bottom: 0;
+}
+
+.user_formz {
+  padding: 12% 0% 0% 0%;
+}
+
+.create-account-button {
+  background-color: #C5D52B;
+  border-color: #C5D52B;
+  color: #FFFFFF;
+  width: 45%;
+  height: 35px;
+}
+
+.purple-button {
+  background-color: #662D91;
+  color: #FFFFFF;
+  font-family: -webkit-body;
+  width: 100% !important;
+  height: 28px !important;
+  border-radius: 100px !important;
+  font-size: 11px;
+  margin-top: 10px !important;
+}
+
+.person-button {
+  font-size: 10px;
+  border-radius: 100%;
+  background-color: #E6E6E6;
+  color: #C1C1C1;
+  height: 35px;
+  width: 40px;
+}
+
+.margin-bottom {
+  margin-bottom: 9% !important;
+}
+
+@media (max-width: 992px) {
+  .user_formz {
+    padding: 16% 0% 0% 0%;
+  }
+}
+
+@media (max-width: 767px) {
+  .user_formz {
+    padding: 5% 0% 0% 0%;
+  }
+  
+  .container-padding {
+    padding: 100px;
+  }
+  
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  
+}

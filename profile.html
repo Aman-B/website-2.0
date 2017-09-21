@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -7,21 +5,32 @@
       <meta content="IE=edge" http-equiv="X-UA-Compatible">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
       <title>FitBeau</title>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><!-- Latest compiled and minified CSS -->
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Optional theme -->
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="js/jquery.validate.js" type="text/javascript"></script><!-- Font awesome -->
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href="images/logo_alone.png" rel="icon">
-      <link href="css/about.css" rel="stylesheet">
-      <link href="css/index.css" rel="stylesheet">
-      <link href="css/global.css" rel="stylesheet">
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/jquery.validate.js"></script>
+
+  <!-- Font awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="icon" href="images/logo_alone.png">
+
+  <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/global.css">
       <link rel="stylesheet" href="css/profile.css">
-      <script type="text/javascript" src="js/jquery.validate.js"></script>
        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript" src="js/profile.js"></script>
     
@@ -40,18 +49,18 @@
      
 
       data.addRows([
-        [new Date(2017, 11),  37.8, 80.8],
-        [new Date(2017, 10),  30.9, 69.5],
-        [new Date(2017, 9),  25.4,   57],
-        [new Date(2017, 8),  11.7, 18.8],
-        [new Date(2017, 7),  11.9, 17.6],
-        [new Date(2017, 6),   8.8, 13.6],
-        [new Date(2017, 5),   7.6, 12.3],
-        [new Date(2017, 4),  12.3, 29.2],
-        [new Date(2017, 3),  16.9, 42.9],
-        [new Date(2017, 2), 12.8, 30.9],
-        [new Date(2017, 1),  5.3,  7.9],
-        [new Date(2017, 0),  6.6,  8.4]
+        [new Date(2017,0, 1),  37.8, 80.8],
+        [new Date(2017,0, 2),  30.9, 69.5],
+        [new Date(2017,0, 3),  25.4,   57],
+        [new Date(2017,0, 4),  11.7, 18.8],
+        [new Date(2017,0, 5), 11.9, 17.6],
+        [new Date(2017,0, 6),  8.8, 13.6],
+        [new Date(2017,0, 7),   7.6, 12.3],
+        [new Date(2017,0, 8),  12.3, 29.2],
+        [new Date(2017,0, 9), 16.9, 42.9],
+        [new Date(2017,0, 10),12.8, 30.9],
+        [new Date(2017,0, 11),  5.3,  7.9],
+        [new Date(2017,0, 25),  6.6,  8.4]
       ]);
 
       var options = {
@@ -63,16 +72,398 @@
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+      var chart = new google.charts.Line(document.getElementsByClassName('bottomchart_material')[0]);
 
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
+
+     
+
+     
 
 		</script>
    </head>
    <body>
     <script>
+
+
+
+
+    function makeAreaChart (FB_cityData) {
+      // body...
+      console.log(FB_cityData);
+    }
+
+
+    function makeCountryChart (FB_countryChart) {
+      // body...
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+       google.charts.setOnLoadCallback(drawBasic);
+       var countryData_val= Object.values(FB_countryChart);
+       var countryData_keys = Object.keys(FB_countryChart);
+       var chartMax=10;
+       var len = Math.ceil(Math.log(countryData_val[0] + 1) / Math.LN10);
+       
+       switch(len)
+       {
+          case 2:
+                chartMax=100;
+                break;
+
+          case 3:
+                chartMax=1000;
+                break;
+          case 4:
+                chartMax=10000;
+                break;
+          case 5:
+                chartMax=100000;
+                break;
+          case 6:
+                chartMax= 1000000;
+                break;
+          case 7: 
+                chartMax= 10000000;
+                break;      
+       }
+
+      function drawBasic() {
+
+             var data = new google.visualization.DataTable();
+             data.addColumn('string', 'Country');
+             data.addColumn('number', 'Likes');
+             console.log(countryData_keys[0].toString());
+             for (var i = 0; i < countryData_val.length; i++) {
+              var temp=countryData_keys[i].toString();
+                if(i<5)
+                {
+                   data.addRow([countryData_keys[i],countryData_val[i]]);
+
+                }
+             };
+
+            var options = {
+              title: 'Country (Abbrev.) vs Likes',
+              chartArea: {width: '60%',height:'70%'},              
+              legend: { position: 'none' },
+              hAxis: {
+                title: 'Total Likes',
+                minValue: 0,
+                maxValue : chartMax,
+                gridlines: {
+                  color: 'transparent'
+                },
+               
+
+              },
+              vAxis: {
+                title: '',
+                textStyle : {
+                    fontSize: 18 // or the number you want
+                }
+              },
+
+              colors:['#2E3192'],
+               width: 600,
+               height: 400,
+               bar: {groupWidth: "50%"},
+
+
+              
+              animation: {
+                duration: 1000,
+                easing: 'linear',
+                startup: true
+              }            
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('country_sidechart_material'));
+
+            chart.draw(data, options);
+          }
+      
+
+    }
+
+    function makeAgeChart (FB_age_total, FB_age_keyValue) {
+      // body...
+
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+       google.charts.setOnLoadCallback(drawBasic);
+       var gender_Values= Object.values(FB_age_keyValue);
+       var  gender_Keys= Object.keys(FB_age_keyValue);
+       var chartMax=10;
+       var len = Math.ceil(Math.log(gender_Values[0] + 1) / Math.LN10);
+       
+       switch(len)
+       {
+          case 2:
+                chartMax=100;
+                break;
+
+          case 3:
+                chartMax=1000;
+                break;
+          case 4:
+                chartMax=10000;
+                break;
+          case 5:
+                chartMax=100000;
+                break;
+          case 6:
+                chartMax= 1000000;
+                break;
+          case 7: 
+                chartMax= 10000000;
+                break;      
+       }
+
+      function drawBasic() {
+
+             var data = new google.visualization.DataTable();
+             data.addColumn('string', 'Age');
+             data.addColumn('number', 'Likes');
+             for (var i = 0; i < gender_Values.length; i++) {
+                if(i<5)
+                {
+                   data.addRow([gender_Keys[i],gender_Values[i]]);
+
+                }
+             };
+
+            var options = {
+              title: 'Age vs Likes',
+              chartArea: {width: '60%',height:'70%'},              
+              legend: { position: 'none' },
+              hAxis: {
+                title: 'Total Likes',
+                minValue: 0,
+                maxValue : chartMax,
+                gridlines: {
+                  color: 'transparent'
+                }
+
+              },
+              vAxis: {
+                title: '',
+                textStyle : {
+                    fontSize: 18 // or the number you want
+                }
+              },
+              colors:['#2E3192'],
+
+               width: 600,
+               height: 400,
+               bar: {groupWidth: "50%"},
+
+              animation: {
+                duration: 1000,
+                easing: 'linear',
+                startup: true
+              }            
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('age_sidechart_material'));
+
+            chart.draw(data, options);
+          }
+      
+
+    }
+
+function makeGenderChart (total, FB_gender_keyValue) {
+
+		var female_value=Object.values(FB_gender_keyValue)[0];
+		var male_value= Object.values(FB_gender_keyValue)[1];
+
+
+		var remaining= total-male_value;
+		console.log('total '+total+'male '+ male_value + 'type '+typeof(male_value));
+		console.log('remaining '+ remaining + 'type '+typeof(remaining));
+
+	     google.charts.load("visualization", "1", { packages: ["corechart"] });      
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      	console.log('drawing chart');
+        var calc_percent= Math.ceil((male_value/total) * 100);
+
+        var data = google.visualization.arrayToDataTable([
+          ['Gender', 'Percent'],
+          ['Male',     male_value],
+          ['None',     remaining]
+        ]);
+
+         var options = {
+            
+            pieHole: 0.9,
+            colors: ['#000000', '#cdcdcd'],
+            pieSliceText: 'none',
+            slices: { 0 : {'color':'blue'}},
+            legend: { position: 'none' },
+            tooltip: { text: 'percentage' },
+            tooltip: { textStyle: { fontSize: 12 } },
+            animation: {
+              duration: 1000,
+              easing: 'linear',
+              startup: true
+            },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementsByClassName('linechart_material')[0]);
+        document.getElementsByClassName('centerLabel')[0].innerHTML=calc_percent.toString()+"%";
+
+        chart.draw(data, options);
+
+        drawChart_two();
+      }
+      function drawChart_two () {
+        // body...
+        remaining=total-female_value;
+        var calc_percent= Math.floor((female_value/total) * 100);
+        console.log('drawing chart');
+        var data = google.visualization.arrayToDataTable([
+          ['Gender', 'Percent'],
+          ['Male',     female_value],
+          ['None',     remaining]
+        ]);
+
+         var options = {
+            
+            pieHole: 0.9,
+            colors: ['#000000', '#cdcdcd'],
+            pieSliceText: 'none',
+            slices: { 0 : {'color':'#EF7DB6'}},
+            legend: { position: 'none' },
+            tooltip: { text: 'percentage' },
+            tooltip: { textStyle: { fontSize: 12 } },
+            animation: {
+              duration: 1000,
+              easing: 'linear',
+              startup: true
+            },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementsByClassName('linechart_material')[1]);
+        document.getElementsByClassName('centerLabel')[1].innerHTML=calc_percent.toString()+"%";
+        chart.draw(data, options);
+
+      }
+
+  }
+   /*for likes etc*/
+   function makeCityChart (sorted_cityData) {
+     // body...
+
+       google.charts.load('current', {packages: ['corechart', 'bar']});
+       google.charts.setOnLoadCallback( function (){
+          drawBasic();
+       });
+
+     
+      console.log('sorted_cityData');
+      console.log(sorted_cityData);
+    var chartMax=10;
+       var len = Math.ceil(Math.log(sorted_cityData[0][1] + 1) / Math.LN10);
+       
+       switch(len)
+       {
+          case 2:
+                chartMax=100;
+                break;
+
+          case 3:
+                chartMax=1000;
+                break;
+          case 4:
+                chartMax=10000;
+                break;
+          case 5:
+                chartMax=100000;
+                break;
+          case 6:
+                chartMax= 1000000;
+                break;
+          case 7: 
+                chartMax= 10000000;
+                break;      
+       }
+
+      function drawBasic() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['City','users' ,],
+              [sorted_cityData[0][0].split(",")[0], sorted_cityData[0][1]],
+              [sorted_cityData[1][0].split(",")[0], sorted_cityData[1][1]],
+              [sorted_cityData[2][0].split(",")[0], sorted_cityData[2][1]],
+              [sorted_cityData[3][0].split(",")[0], sorted_cityData[3][1]],
+              [sorted_cityData[4][0].split(",")[0], sorted_cityData[4][1]]
+            ]);
+
+            var options = {
+              title: 'City vs Likes',
+              chartArea: {width: '60%',height:'70%'},
+              legend: { position: 'none' },
+              hAxis: {
+                title: 'Total Likes',
+                minValue: 0,
+                maxValue : chartMax,
+               
+                gridlines: {
+                  color: 'transparent'
+                }
+              },
+              colors:['#2E3192'],
+              vAxis: {
+                title: '',
+                 textStyle : {
+                    fontSize: 18 // or the number you want
+                }
+              },
+               bar: {groupWidth: "50%"},
+                width: 600,
+                height: 400,
+              animation: {
+                duration: 1000,
+                easing: 'linear',
+                startup: true
+              }            
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('city_sidechart_material'));
+
+            chart.draw(data, options);
+          }
+   
+      
+
+   }
+    
+
+   
+
+
+
         var FB_postIDArray=[];
+        var FB_pageID;
+        var prev_year,prev_month;
+        
+        var FB_gender_keys=[];
+        var FB_gender_values=[];
+        var FB_gender_keyValue={};
+        
+        var FB_age_keys=[];
+        var FB_age_values=[];
+        var FB_age_keyValue={};
+
+
+        var FB_cityData={};
+        var FB_age_gender_Data={};
+
+         var age_key_index, gender_key_index;
+         var age_value_index, gender_value_index;
+
+         var FB_page_fans_country_data={};
+
         console.log('year '+ (new Date()).getFullYear());
         window.fbAsyncInit = function() {
             FB.init({
@@ -82,20 +473,72 @@
               version          : 'v2.10'
             });
             FB.AppEvents.logPageView();
-            var prev_year= (new Date()).getFullYear()-1;
+            var cur_month=(new Date()).getMonth()-1;
+            var cur_year=(new Date()).getFullYear();
+            var cur_date=(new Date()).getDate();
+            if(cur_month<1)
+            {
+              prev_month=cur_month+11;
+              prev_year=(new Date()).getFullYear()-1;
+            }
+            else
+            {
+              prev_month=cur_month-1;
+              prev_year=cur_year;
+            }
+            var prev_date=cur_date-3;
           /*,{"until":"1502326861","since":"1451610061"}*/
-            FB_since=Math.floor((new Date(prev_year+'-01-01 00:00:00')).getTime()/1000);
+            FB_since=Math.floor((new Date(cur_year+'-'+prev_month+'-'+cur_date+' 00:00:00')).getTime()/1000);
+/*Math.round((new Date()).getTime() / 1000);*/
 
-            FB_until=Math.round((new Date()).getTime() / 1000);
+            FB_until=Math.round((new Date(cur_year+'-'+cur_month+'-'+cur_date+' 00:00:00')).getTime() / 1000);
+
+            console.log('Since '+FB_since + ' Until '+FB_until);
 
             FB.getLoginStatus(function(response){
                 console.log(response);
                 if (response.status === 'connected') 
                 {
-                    FB.api('/me/posts','GET',{"until":FB_until,"since":FB_since},function(response)
+                    /*FB.api('/me/posts','GET',{"until":FB_until,"since":FB_since},function(response)
                     {
                         getData(response);
+                    });*/
+                    FB.api('/me/accounts','GET',function(response)
+                    {
+                       console.log(response);
+                       FB_pageID=response.data[0].id;
+                       console.log(FB_pageID);
+                       getInsights(FB_pageID);
                     });
+                    function getInsights(FB_pageID)
+                    {
+                        FB.api('/'+FB_pageID+'/insights/page_fans_city,page_fans_gender_age','GET',function(response)
+                          {
+                             console.log(response);
+                            // console.log();
+                             processFansData(response);
+                             console.log(response.data[0].values[0].value[Object.keys(response.data[0].values[0].value)[4]]);
+                             console.log(Object.keys(response.data[0].values[0].value));
+                          });
+
+                        getLikesFromFB('/'+FB_pageID+'/insights/page_fans');
+
+
+                        FB.api('/'+FB_pageID+'/insights/page_fans_country','GET',function(response)
+                        {
+
+                          console.log(response.data[0].values[0].value);
+                          FB_page_fans_country_data=response.data[0].values[0].value;
+                          console.log(FB_page_fans_country_data);
+                          makeCountryChart(FB_page_fans_country_data);
+
+                        });
+
+                    }
+                   
+
+
+                     
                 }
                 
                 
@@ -103,29 +546,202 @@
             });
           };
 
+          function getLikesFromFB (url) {
+            // body...
+            FB.api(url,'GET',function(response)
+                          {
+                            getData(response);
+                          });
+
+          }
+
+          function processFansData(response)
+          {
+            for (var i = 0; i < response.data.length; i++) {
+              
+              for (var j = 0; j < response.data[i].values.length; j++) {
+                
+                if(i==0)
+                { /*First field is city, so parse city.*/
+                  console.log('city starts here ');
+                  console.log(Object.keys(response.data[i].values[j].value).length);
+                  var city_length=Object.keys(response.data[i].values[j].value).length;
+                    for (var cities = 0; cities < city_length; cities++) {
+                      // console.log(Object.keys(response.data[i].values[j].value)[cities]);
+                       var key=Object.keys(response.data[i].values[j].value)[cities];
+                       //console.log(response.data[i].values[j].value[key]);
+                        FB_cityData[key]=response.data[i].values[j].value[key];
+                    };
+                    console.log('FB_cityData');
+                    console.log(FB_cityData);
+
+                    
+                }
+                if(i==1)
+                {
+                  /* Second field is age_gender, parse it.*/
+                  console.log("age,gender starts here.");
+                  console.log(Object.keys(response.data[i].values[j].value).length);
+                  var age_gender_length=Object.keys(response.data[i].values[j].value).length;
+                  for (var ag = 0; ag < age_gender_length; ag++) {
+                      // console.log(Object.keys(response.data[i].values[j].value)[ag]);
+                       var key=Object.keys(response.data[i].values[j].value)[ag];
+                      // console.log(response.data[i].values[j].value[key]);
+                       FB_age_gender_Data[key]=response.data[i].values[j].value[key];
+
+
+                    };
+                    console.log('FB_age_gender_Data');
+                    console.log(FB_age_gender_Data);
+
+                    
+                   
+                    
+
+                }
+                //console.log(response.data[0].values[0].value[Object.keys(response.data[i].values[j].value)[0]]);
+              };
+
+            };
+            setTopFive(FB_cityData);
+
+            sortByAgeGender(FB_age_gender_Data);
+
+          }
+
+          function setTopFive (FB_cityData) {
+            // body...
+            var topCities= {};
+
+            var com_city;
+
+            var sorted_index=0;
+
+            var max;
+
+            var got=1;
+
+            var got_index;
+
+            var sorted_cityData=[];
+            for(var city in FB_cityData)
+            {
+              sorted_cityData.push([city,FB_cityData[city]]);
+            }
+
+             console.log(sorted_cityData);
+
+            sorted_cityData.sort(function (a,b)
+            {
+              return b[1]-a[1];
+            });
+
+            console.log(sorted_cityData);
+            makeCityChart(sorted_cityData);
+          }
+
+
+          function sortByAgeGender(FB_age_gender_Data)
+          {
+                console.log('Sorted');
+                console.log( Object.keys(FB_age_gender_Data).length);
+                 age_key_index=0; gender_key_index=0;
+                 age_value_index=0;gender_value_index=0;
+                 var upper_runtime=0;
+
+                 var gender_total_value=0;
+
+                for (var i = 0; i < Object.keys(FB_age_gender_Data).length; i++) {
+                      
+                      /* Get keys*/
+                      var splitted_key=  Object.keys(FB_age_gender_Data)[i].toString().split('.');
+
+                       /* Get values*/
+
+
+                        /*console.log('agv');
+                      */console.log('split0 :' +splitted_key[0]+ 'split1 :'+splitted_key[1] + "value "+ Object.values(FB_age_gender_Data)[i]);
+                      if(splitted_key[0] in FB_gender_keyValue)
+                      {
+                          FB_gender_keyValue[splitted_key[0]]=parseInt(FB_gender_keyValue[splitted_key[0]]+Object.values(FB_age_gender_Data)[i]);
+
+                      }
+                      else
+                      { 
+
+                          FB_gender_keyValue[splitted_key[0]]=Object.values(FB_age_gender_Data)[i];
+
+
+                      }
+                      if(splitted_key[1] in FB_age_keyValue)
+                      {
+                   	  FB_age_keyValue[splitted_key[1]]=parseInt(FB_age_keyValue[splitted_key[1]]+ Object.values(FB_age_gender_Data)[i]);
+
+                      }
+                      else
+                      {
+
+                         FB_age_keyValue[splitted_key[1]]=Object.values(FB_age_gender_Data)[i];
+
+                      }
+                      
+
+
+
+                        /*Remove duplicate keys.*/
+                       /* removeDuplicates(i,FB_gender_keys,FB_age_keys,
+                                splitted_key,age_gender_value,FB_gender_values,FB_age_values,length);*/
+                   
+                      
+                      
+
+
+                     
+                      //console.log(Object.values(FB_age_gender_Data)[i].toString().split('.'));
+                      /*if(splitted_value[0]!=FB_gender_values[i-1])
+                      {
+                        FB_gender_keys[i]=splitted_key[0];
+                      }
+                      if(splitted_value[1]!=FB_age_values[i-1])
+                      {
+                        FB_age_values[i]=splitted_key[1];
+                      }*/
+
+                     
+
+                };
+                 console.log(FB_gender_keyValue);
+                  console.log(FB_age_keyValue);
+
+                  for (var i = 0; i < Object.values(FB_gender_keyValue).length; i++) {
+
+
+                  	gender_total_value= gender_total_value+Object.values(FB_gender_keyValue)[i];
+
+
+
+                  };
+                  makeGenderChart(gender_total_value,FB_gender_keyValue);
+                  makeAgeChart(gender_total_value,FB_age_keyValue);
+
+          }
+
+          function removeDuplicates(index,FB_gender_keys,FB_age_keys,splitted_key,age_gender_value,FB_gender_values,FB_age_values,length)
+          {
+               // console.log('here');
+                      /*  console.log(splitted_key[0]);
+                        console.log(FB_gender_keys);
+                        console.log(FB_age_keys);*/
+                
+
+          }
+
           function getData(response) 
           {
-                console.log(response);
-               // console.log(response.data[0].id);
-                // FB_postIDArray=new Array(response.data.length)
-                console.log(response.data[0].created_time);
-                for (var i = 0; i < response.data.length; i++) {
 
-                  console.log(response.data[i].id);
-                  FB_postIDArray[i]=response.data[i].id;
-                };
-                console.log(FB_postIDArray);
-                for (var i = 0; i < FB_postIDArray.length; i++) {
-                  
+            console.log(response);
 
-                  FB.api('/'+FB_postIDArray[i]+'/likes?summary=1', function(response) {
-                    console.log(response.summary.total_count);
-                    
-                      console.log(response);
-                    
-                  }); 
-                };
-            }
+          }
 /*
           FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
@@ -138,6 +754,11 @@
               console.log('Not logged in');
             }
           });*/
+         
+
+         
+           
+           
          
 
           (function(d, s, id){
@@ -223,7 +844,7 @@
       <div class="container-fluid-container mcontainer" style="padding-top:10%;">
          <!-- Put page content here -->
          <button id="fb-login-button">FB signin!</button>
-         <button id="twitter-login-button">Twitter signin!</button>
+         <button id="insta-login-button">Instagram signin!</button>
 
          <div class="row">
             <div class="col-lg-12">
@@ -278,15 +899,63 @@
 		 <!-- Analytic row start. -->
          <div class="row" style="margin-top:5%;"> 
          	<div class="col-lg-12">
-         		<div class="col-lg-3 col-lg-offset-5">
-         			<h2 class="font-class"> Analytic</h2>
-         		</div>
-         		<div class="col-lg-12">
-         			<!-- For the graph. -->
-    					<div id="linechart_material">
-    							
-    					</div>
-         		</div>
+         		<div class="row">
+              <div class="col-lg-3 col-lg-offset-5">
+           			<h2 class="font-class"> Analytic</h2>
+           		</div>
+            </div>
+            <div class="row" style="height:450px;">  
+             		<div class="col-lg-6" style="margin-top: 15%;">
+             			<!-- For the graph. -->
+                  <table class="Charts">
+                    <tr>
+                        <td>
+                          <img src="images/male_stats.png" alt="">
+                        </td>
+                        <td class="donutCell">
+
+                            <div id="donutchart1" class="linechart_material" style="width:200px;"></div>
+
+                            <div class="centerLabel"></div>
+                        </td>
+                        <td>
+                          <img src="images/female_stats.png" alt="">
+                        </td>
+                        <td class="donutCell">
+                            <div id="donutchart1" class="linechart_material" style="width:200px;"></div>
+                            <div class="centerLabel"></div>
+                        </td>
+
+                    </tr>
+                  </table>     
+        					<!-- <div id="linechart_material">
+        							
+        					</div> -->
+                             
+             		</div>
+                <div class="col-lg-6" style="height:100%; margin-top:6%;">
+                      <div class="row">
+                        <div class="col-lg-2 col-lg-offset-1"><button class="graph-btn put-border" id="city-graph-btn" >City</button></div> 
+                        <div class="col-lg-2 "><button class="graph-btn" id="country-graph-btn">Country</button></div>
+                        <div class="col-lg-2 col-lg-offset-1 "><button class="graph-btn" id="age-graph-btn">Age</button></div>                   
+                      </div>
+                      <div class="row" >
+                        <div class="col-lg-12"> <div id="city_sidechart_material" style="display:block;" ></div></div>
+
+                        <div class="col-lg-12"> <div id="country_sidechart_material" style="display:none;"></div></div>
+                        <div class="col-lg-12"> <div id="age_sidechart_material" style="display:none;"></div></div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+
+                <div class="bottomchart_material"></div>
+
+
+            </div>
+             </div> 
+            </div>
          	</div>
          </div>
 		 <!-- Analytic row end. -->
@@ -383,7 +1052,43 @@
     <!-- <script type="text/javascript" src="js/index.js"></script> -->
        <!-- For the graph. -->
 
-	   
+	     <script>
+        $("#city-graph-btn").click( function(){
+          $('#country_sidechart_material').css('display','none');
+             $('#age_sidechart_material').css('display','none');
+            $('#city_sidechart_material').css('display','block');
+
+            $(this).toggleClass('put-border');
+
+            $('#country-graph-btn').toggleClass('put-border',false);
+            $('#age-graph-btn').toggleClass('put-border',false);
+            
+          });
+        $("#country-graph-btn").click( function(){
+          $('#city_sidechart_material').css('display','none');
+             $('#age_sidechart_material').css('display','none');
+            $('#country_sidechart_material').css('display','block');
+
+            $(this).toggleClass('put-border');
+
+            $('#city-graph-btn').toggleClass('put-border',false);
+            $('#age-graph-btn').toggleClass('put-border',false);
+            
+          });
+        $("#age-graph-btn").click( function(){
+          $('#country_sidechart_material').css('display','none');
+             $('#city_sidechart_material').css('display','none');
+            $('#age_sidechart_material').css('display','block');
+
+            $(this).toggleClass('put-border');
+
+            $('#city-graph-btn').toggleClass('put-border',false);
+            $('#country-graph-btn').toggleClass('put-border',false);
+
+            
+          });
+       </script>
+
    </body>
 </html>
 
