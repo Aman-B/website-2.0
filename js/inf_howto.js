@@ -5,7 +5,7 @@
      var first_template=
      {
         "page_head" : "Discover Content & Campaigns",
-        "laptopscreen_image" : "images/search_page.png",
+        "laptopscreen_image" : "images/create_content.png",
         "laptop_p" :  "If you know what types of content you’re looking for, filter by:",
         "laptop_li_type" :"ul",
         "laptop_li_num" : "3",
@@ -14,8 +14,8 @@
         "laptop_li_three" : "Platform type (e.g. snapchat, Instagram, Facebook, Youtube)",
         "laptop_second_para":"",
         "phone_head" : "Browse content for inspiration",
-        "appscreen1" : "images/appscreen_9.png",
-        "appscreen2" : "images/appscreen_11.png",
+        "appscreen1" : "images/appscreen_3.png",
+        "appscreen2" : "images/appscreen_2.png",
         "phone_p" : "Swipe right (like) or left (don’t like) to discover the content other influencers have created. Other influencers add their best work to their portfolio, because it’s the fastest way to get noticed and headhunted by brands, as we share it across the whole platform. Content may be from previous promotions they’ve done, or content they’ve created purely for their fan.",
         
         "phone_li_one" : "",
@@ -60,8 +60,8 @@
         "laptop_li_three" : "Platform type (e.g. snapchat, Instagram, Facebook, Youtube)",
         "laptop_second_para": "You’ve come a long way to get to where you are, but you’ve also have the potential to go so much further. Share your top influencer tips, and tools you’ve used to create amazing content. Your one great tip could have such a massive impact on the community, and the best thing is, you’ll discover amazing tips back that help you out a 100 fold.You can add content and tips from both the site and the app.",
         "phone_head" : "Let them come to you",
-        "appscreen1" : "images/browse1.png",
-        "appscreen2" : "images/browse2.png",
+        "appscreen1" : "images/browse2.png",
+        "appscreen2" : "images/browse1.png",
         "phone_p" : "You get more than what you put in, because sharing your best work not only make your ‘Media Kit’ extremely powerful, but it can get brands chasing you! /n Find your best work, or find that Instagram post that got the most likes and add it to your profile. We spread this throughout the app and the website platform for all to see.",
         "phone_li_one" : "",
         "phone_li_two" : "",
@@ -71,18 +71,68 @@
 
      var templates= [first_template,second_template,third_template];
 
-     var count= 0;
+     var count= 1;
 
     $(document).ready(function() {  
 
+            //$("#upper").fadeIn("normal"); 
+            load_template(count,"first");
 
-            load_template(count,"next");
              function load_template(count,buttonClicked)
              {
-                $("#test").load("sample_template.html",function (){
-                    console.log(templates[count]);
-                    parseTemplate(templates[count],buttonClicked);
-                });
+                var animationClass;
+                if(buttonClicked == "first")
+                {
+                    $("#upper").load("inf_upper"+count+".html",function (){
+                        $(".laptop-row").addClass("fadeInLeft");
+                    });
+
+                    $("#lower").load("inf_lower"+count+".html",function (){
+                        $(".mobile-row").addClass("fadeInLeft");
+                    });
+                }
+
+                else if (buttonClicked =="prev")
+                {
+                    
+                    animationClass="fadeInRight";
+                    $("#upper").load("inf_upper"+count+".html",function (){
+                        $(".laptop-row").removeClass("fadeInRight");
+                        $(".laptop-row").removeClass("fadeInLeft");
+
+                        $(".laptop-row").addClass(animationClass);
+                    });
+
+                    $("#lower").load("inf_lower"+count+".html",function (){
+
+                        $(".mobile-row").removeClass("fadeInRight");
+                        $(".mobile-row").removeClass("fadeInLeft");
+
+                        $(".mobile-row").addClass(animationClass);
+                        
+                    });
+                }
+                else
+                {
+                    animationClass="fadeInLeft";
+                    $("#upper").load("inf_upper"+count+".html",function (){
+                        $(".laptop-row").removeClass("fadeInRight");
+                        $(".laptop-row").removeClass("fadeInLeft");
+
+                        $(".laptop-row").addClass(animationClass);
+                    });
+
+                    $("#lower").load("inf_lower"+count+".html",function (){
+                        $(".mobile-row").removeClass("fadeInRight");
+                        $(".mobile-row").removeClass("fadeInLeft");
+
+                        $(".mobile-row").addClass(animationClass);
+                    });
+                }
+                
+                 
+                
+               
              }
              
              
@@ -149,11 +199,10 @@
                  $(".phone_p")[0].innerHTML =template["phone_p"];
 
                 $($(".appscreen1")[0]).addClass("slide-in-content animated "+ animationType +" go");
-                $(".appscreen1")[0].innerHTML =template["appscreen1"];
+                $($(".appscreen1")[0]).attr('src',template["appscreen1"]);
 
                  $($(".appscreen2")[0]).addClass("slide-in-content animated "+ animationType +" go");
-                $(".appscreen2")[0].innerHTML =template["appscreen2"];
-
+                $($(".appscreen2")[0]).attr('src',template["appscreen2"]);
                  
 
 
@@ -177,14 +226,14 @@
             // },  3000);
 
             $("#next-btn").click(function (){
-                if(count <2)
+                if(count <3)
                 {
                     count=count+1;
 
                 }
                 else
                 {
-                    count=0;
+                    count=1;
                 }
 
                 
@@ -192,14 +241,14 @@
 
             })
             $("#prev-btn").click(function (){
-                if(count >0)
+                if(count >1)
                 {
                     count=count-1;
 
                 }
                 else
                 {
-                    count=2;
+                    count=3;
                 }
 
                 load_template(count,"prev");

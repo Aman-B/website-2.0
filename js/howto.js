@@ -71,18 +71,68 @@
 
      var templates= [first_template,second_template,third_template];
 
-     var count= 0;
+     var count= 1;
 
     $(document).ready(function() {  
 
 
-             load_template(count,"next");
+             load_template(count,"first");
+
              function load_template(count,buttonClicked)
              {
-                $("#test").load("sample_template.html",function (){
-                    console.log(templates[count]);
-                    parseTemplate(templates[count],buttonClicked);
-                });
+                var animationClass;
+                if(buttonClicked == "first")
+                {
+                    $("#upper").load("b_upper"+count+".html",function (){
+                        $(".laptop-row").addClass("fadeInLeft");
+                    });
+
+                    $("#lower").load("b_lower"+count+".html",function (){
+                        $(".mobile-row").addClass("fadeInLeft");
+                    });
+                }
+
+                else if (buttonClicked =="prev")
+                {
+                    
+                    animationClass="fadeInRight";
+                    $("#upper").load("b_upper"+count+".html",function (){
+                        $(".laptop-row").removeClass("fadeInRight");
+                        $(".laptop-row").removeClass("fadeInLeft");
+
+                        $(".laptop-row").addClass(animationClass);
+                    });
+
+                    $("#lower").load("b_lower"+count+".html",function (){
+
+                        $(".mobile-row").removeClass("fadeInRight");
+                        $(".mobile-row").removeClass("fadeInLeft");
+
+                        $(".mobile-row").addClass(animationClass);
+                        
+                    });
+                }
+                else
+                {
+                    animationClass="fadeInLeft";
+                    $("#upper").load("b_upper"+count+".html",function (){
+                        $(".laptop-row").removeClass("fadeInRight");
+                        $(".laptop-row").removeClass("fadeInLeft");
+
+                        $(".laptop-row").addClass(animationClass);
+                    });
+
+                    $("#lower").load("b_lower"+count+".html",function (){
+                        $(".mobile-row").removeClass("fadeInRight");
+                        $(".mobile-row").removeClass("fadeInLeft");
+
+                        $(".mobile-row").addClass(animationClass);
+                    });
+                }
+                
+                 
+                
+               
              }
              
              
@@ -149,11 +199,10 @@
                  $(".phone_p")[0].innerHTML =template["phone_p"];
 
                 $($(".appscreen1")[0]).addClass("slide-in-content animated "+ animationType +" go");
-                $(".appscreen1")[0].innerHTML =template["appscreen1"];
+                $($(".appscreen1")[0]).attr('src',template["appscreen1"]);
 
                  $($(".appscreen2")[0]).addClass("slide-in-content animated "+ animationType +" go");
-                $(".appscreen2")[0].innerHTML =template["appscreen2"];
-
+                $($(".appscreen2")[0]).attr('src',template["appscreen2"]);
                  if(template["phone_li_num"] == "3")
                  {
                     $($(".phone-list-container")[0]).html("<ul class='"+points+" slide-in-content animated "+ animationType +" go' style='color: #FFF;margin-top:5%;'> <li style='color: #FFF;margin-top: 4%;margin-bottom: 5%; font-size:17px;'>"+template["phone_li_one"]+" </li>"
@@ -188,14 +237,14 @@
             // },  3000);
 
             $("#next-btn").click(function (){
-                if(count <2)
+                if(count <3)
                 {
                     count=count+1;
 
                 }
                 else
                 {
-                    count=0;
+                    count=1;
                 }
 
                 
@@ -203,14 +252,14 @@
 
             })
             $("#prev-btn").click(function (){
-                if(count >0)
+                if(count >1)
                 {
                     count=count-1;
 
                 }
                 else
                 {
-                    count=2;
+                    count=3;
                 }
 
                 load_template(count,"prev");

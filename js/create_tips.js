@@ -1,4 +1,4 @@
-var create_content =(function ($)
+var create_tips =(function ($)
 {
 	 // Initialize Firebase
 	 var firebase = require("firebase");
@@ -15,23 +15,26 @@ var create_content =(function ($)
 	  firebase.initializeApp(config);
 
 
-    var contentCategoryArray = ["Beauty","Fitness","Health","Nutrition","Wellness"]
+ 	var tipCategoryArray = ["Beauty","Fitness","Health","Nutrition","Wellness"]
 
-	var contentTypeArray = ["Cardio Training","Bodybuilding","Booty building","Clothing, Shoes & Bags",
-	"Cycling","Fragrance","Gym Equipment","Hair Care & Styling",
-	"Make Up","Manicure & Pedicure","Massage","Natural & Alternative Remedies",
-	"Nutrition & Supplements","Oral Care","Pole Dancing","Resistance Training",
-	"Running & Jogging","Salon & Spa","Shaving & Hair Removal","Skincare","Slimming",
-	"Sports Clothing & footwear","Sports Equipment","Sun Care & Tanning","Swimming",
-	"Swimwear","Tech & Accessories","Toning","Yoga & Pilates","Other Beauty","Other Fitness",
-	"Other Health","Other Wellness"]
+	var tipContentArray = ["Cardio Training","Bodybuilding","Booty building",
+	"Clothing, Shoes & Bags","Cycling","Fragrance","Gym Equipment","Hair Care & Styling","Make Up",
+	"Manicure & Pedicure","Massage","Natural & Alternative Remedies","Nutrition & Supplements",
+	"Oral Care","Pole Dancing","Resistance Training","Running & Jogging","Salon & Spa",
+	"Shaving & Hair Removal","Skincare","Slimming","Sports Clothing & footwear","Sports Equipment",
+	"Sun Care & Tanning","Swimming","Swimwear","Tech & Accessories","Toning","Yoga & Pilates","Other Beauty",
+	"Other Fitness","Other Health","Other Wellness"]
+    
+    var tipType = ["Profile","Tools","Follower","Engagement"]
 
 		var created_user;
 		var created_userID='1FJ1nmDIeJSsrOPBGC7NalL4cpo2';
 
 		var image_name;
 
-		var bus_or_in=0; //influencer=0, business=1
+		
+
+		var  tip_img_src,tip_title,tip_cat,tip_topic,tip_type,tip_website,tip_desc;
 
 
 	  $(document).ready(function() { 
@@ -79,7 +82,7 @@ var create_content =(function ($)
 					}
 
 
-					function uploadImage(created_userID,bus_or_in,isContent)
+					function uploadImage(created_userID)
 					{
 
 						console.log('user uid ' + created_userID);
@@ -102,16 +105,10 @@ var create_content =(function ($)
 
 							// Upload file and metadata to the object 'images/mountains.jpg'
 							var uploadTask ;
-							if(isContent)
-							{
-								 uploadTask = storageRef.child(created_userID+'/content/' + image_file.name).put(image_file, metadata);
+						    uploadTask = storageRef.child(created_userID+'/tips/' + image_file.name).put(image_file, metadata);
 
 
-							}
-							else
-							{
-								uploadTask = storageRef.child(created_userID+'/profileImage/' + image_file.name).put(image_file, metadata);
-							}
+							
 
 							// Listen for state changes, errors, and completion of the upload.
 							uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -157,87 +154,89 @@ var create_content =(function ($)
 							  // Upload completed successfully, now we can get the download URL
 							  downloadURL = uploadTask.snapshot.downloadURL;
 							  console.log('download url ' +downloadURL);
-							  if(!isContent)
-							  {
-							  	createUser(created_userID);
-
-							  }
-							  else
-							  {
-							  	//is Content
-							  	console.log('isContent');
+							 
 							  	uploadContent(created_userID);
-							  }
-							  
+							  							  
 							});
 
 								
 					}
 
 
-					$("#create-content-page-form").on('change',"#create-content-page-file-input",function (){
-						readURL(this,"#create-content-page-image");
+					$("#create-tips-form").on('change',"#create-tip-file-input",function (){
+						readURL(this,"#tip-image");
 					});
 
 
-	  			for(var i=0; i< contentCategoryArray.length;i++)
+	  			for(var i=0; i< tipCategoryArray.length;i++)
 					{
 					  //creates option tag
 					  jQuery('<option/>', {
-					        value: contentCategoryArray[i],
-					        html: contentCategoryArray[i]
-					        }).appendTo('#category-page-dropdown select'); //appends to select if parent div has id dropdown
+					        value: tipCategoryArray[i],
+					        html: tipCategoryArray[i]
+					        }).appendTo('#tip-cat-dropdown select'); //appends to select if parent div has id dropdown
 					}
 
-					for(var i=0; i< contentTypeArray.length;i++)
+					for(var i=0; i< tipContentArray.length;i++)
 					{
 					//creates option tag
 					  jQuery('<option/>', {
-					        value: contentTypeArray[i],
-					        html: contentTypeArray[i]
-					        }).appendTo('#type-page-dropdown select'); //appends to select if parent div has id dropdown
+					        value: tipContentArray[i],
+					        html: tipContentArray[i]
+					        }).appendTo('#tip-topic-dropdown select'); //appends to select if parent div has id dropdown
 					}
 
-					$('#create-content-form').validate({
+					for(var i=0; i< tipType.length;i++)
+					{
+					//creates option tag
+					  jQuery('<option/>', {
+					        value: tipType[i],
+					        html: tipType[i]
+					        }).appendTo('#tip-type-dropdown select'); //appends to select if parent div has id dropdown
+					}
+
+					$('#create-tips-form').validate({
 						errorClass: "my-error-class",
 	   					validClass: "my-valid-class"
 	   				});
 				
-					$('#create-content-page-form').submit(function (event){
+					$('#create-tips-form').submit(function (event){
 
 
-						var isValid= $('#create-content-page-form').valid();
+						var isValid= $('#create-tips-form').valid();
 						console.log(isValid);
 						event.preventDefault();
 
-						img_src = $("#create-content-page-image").attr('src');
-						cc_name= $('#content-page-name').val();
-						cc_cat= $('#category-page-select').find(":selected").text();
-						cc_type=$('#type-page-select').find(":selected").text();
-						cc_web=$('#content-page-web').val();
-						cc_make=$('#content-page-make').val();
-						cc_desc=$('#content-page-desc').val();
+						tip_img_src = $("#tip-image").attr('src');
+						tip_title= $('#tip-title').val();
+						tip_cat= $('#tip-cat-select').find(":selected").text();
+						tip_topic=$('#tip-topic-select').find(":selected").text();
+						tip_type=$('#tip-type-select').find(":selected").text();
+						tip_website=$('#tip-website').val();
+						tip_desc=$('#tip-desc').val();
+						
 
-						console.log(cc_name + " " +cc_cat + " " +cc_type+ " " + cc_web + " " +cc_make + " " +cc_desc + " val "+$('#content-desc').val());
-
-						if(isValid && cc_name!="" && cc_desc!="" && cc_type!="Type:" && cc_cat!="Category:")
+						console.log(tip_img_src + " " +tip_title + " " +tip_cat+ " " +tip_topic+" " + tip_type + " " +tip_website +" "+tip_desc);
+						console.log(isValid);
+						var condition =isValid && tip_title!="" && tip_desc!="" && tip_type!="Blog type:" && tip_cat!="Blog Category:" && tip_topic !="Blog Topic:";
+						console.log(condition);
+						if(isValid && tip_title!="" && tip_desc!="" && tip_type!="Blog type:" && tip_cat!="Blog Category:" && tip_topic !="Blog Topic:")
 						{
-							var temp=window.atob(img_src.split(',')[1]);
-							//console.log('decode '+temp);
-							//console.log('here in if' + img_src);
+							/*var temp=window.atob(tip_img_src.split(',')[1]);
+							console.log('decode '+temp);*/
+							console.log('here in if' + tip_img_src);
 
 							
-							if(img_src!= "images/original_upload_image.png")
+							if(tip_img_src!= "images/original_upload_image.png")
 							{
 								console.log('upload image');
-								bus_or_in=1;
-								uploadImage(created_userID,1,true);
+								uploadImage(created_userID);
 							}
 							else
 							{
 								console.log('here in uc' );
-								console.log(" cu " +created_user);
-								uploadContent(created_user);
+								
+								uploadContent(created_userID);
 
 							}
 						}
@@ -251,26 +250,24 @@ var create_content =(function ($)
 					
 
 
-					function uploadContent(user)
+					function uploadContent(created_userID)
 					{
 						var random_string=  random128Hex();
 						console.log('random' +random_string);
-						if(img_src=="images/original_upload_image.png")
+						if(tip_img_src=="images/original_upload_image.png")
 						{
 							
-							firebase.database().ref("users/"+created_userID+"/content").child(random_string).set({
-							         name: cc_name,
-							         topic:cc_cat,
-							         type:cc_type,
-							         website:cc_web,
-							         make:cc_make,
-							         description:cc_desc
+							firebase.database().ref("users/"+created_userID+"/tips").child(random_string).set({
+							         description: tip_desc,
+							         tipType:tip_type,
+							         title:tip_title,
+							         topic:tip_topic,
+							         type:tip_type,
+							         website:tip_website
 							         
 							    
 							      }).then( function() {
-				      					 $('#create-content-modal').modal('hide'); 
-				      					 $('#wait-modal').modal('hide'); 
-							
+				      					
 
 			  					      	alert("Content submitted successfully!");
 
@@ -281,14 +278,14 @@ var create_content =(function ($)
 						else
 						{
 							
-							firebase.database().ref("users/"+created_userID+"/content").child(random_string).set({
-							         name: cc_name,
-							         topic:cc_cat,
-							         type:cc_type,
-							         website:cc_web,
-							         make:cc_make,
-							         description:cc_desc,
-							         photoURL:downloadURL
+							firebase.database().ref("users/"+created_userID+"/tips").child(random_string).set({
+							         description: tip_desc,
+							         tipType:tip_type,
+							         title:tip_title,
+							         topic:tip_topic,
+							         type:tip_type,
+							         website:tip_website,
+							         iconURL:downloadURL
 							         
 							    
 							      }).then( function() {
